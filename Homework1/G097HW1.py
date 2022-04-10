@@ -36,7 +36,7 @@ def main():
 	## Task 1
 	
 	rawData.repartition(numPartitions=K)
-	print(rawData.count())
+	print("Number of rows = ", rawData.count())
 	print("TASK 1 DONE")
 
 	## Task 2
@@ -45,14 +45,14 @@ def main():
 		.groupByKey()
 		.flatMap(lambda x: [(x[0][0], x[0][1])]))
 	productCustomer.persist()
-	print(productCustomer.collect())
+	print("Product-Customer Pairs = ", productCustomer.count())
 	print("TASK 2 DONE")
 	
 	## Taks 3
 	productPopularity1 = (productCustomer.mapPartitions(popularity_counter_partition)
 										.groupByKey()
 										.mapValues(lambda vals: sum(vals)))
-	print(productPopularity1.collect())
+	#print(productPopularity1.collect())
 	print("TASK 3 DONE")
 
 	## Task 4
@@ -61,9 +61,8 @@ def main():
 	and reduceByKey methods (instead of mapPartitionsToPair/mapPartitions) and calling
 	 the resulting RDD productPopularity2.'''
 	productPopularity2 = (productCustomer.flatMap(popularity_counter)
-										.groupByKey()
-										.mapValues(lambda vals: sum(vals)))
-	print(productPopularity2.collect())
+										.reduceByKey(lambda x, y: x+y))
+	#print(productPopularity2.collect())
 	print("TASK 4 DONE")
 
 	## Task 5
@@ -71,19 +70,27 @@ def main():
 		sorted_popularity=(productPopularity1.flatMap(lambda pair: [(pair[1], pair[0])])
 											.sortByKey(ascending=False)
 											.take(H))
-		print(sorted_popularity)
+		print("Top ", H, " Products and their Popularities")
+		for elem in sorted_popularity:
+			print("Product ", elem[1], " Popularity ", elem[0])
 	
-	print("TASK 5 DONE")
+		print("TASK 5 DONE")
 
 	### Task 6
 
 	if H==0:
 		sorted_pop1 = (productPopularity1.sortByKey()
 										.collect())
-		print("POPULARITY 1: ", sorted_pop1)
+		for elem in sorted_pop1:
+			print("Product ", elem[1], " Popularity ", elem[0])
+		#print("POPULARITY 1: ", sorted_pop1)
 		sorted_pop2 = (productPopularity2.sortByKey()
 										.collect())
-		print("POPULARITY 2: ", sorted_pop2)
+		#print("POPULARITY 2: ", sorted_pop2)
+		for elem in sorted_pop1:
+			print("Product ", elem[1], " Popularity ", elem[0])
+		
+		print("TASK 6 DONE")
 
 
 
