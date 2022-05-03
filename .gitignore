@@ -1,5 +1,6 @@
 *.md
 *.csv
+*.pdf
 WordCountExample.py
 
 # Byte-compiled / optimized / DLL files
@@ -131,3 +132,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Big Data.code-workspace
