@@ -111,8 +111,12 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
             r = 2*r
 
 def ComputeObjective(inputPoints, solution, z):
-    objetive = 0 #not roght now
-    return objective
+    max_value = 0;
+    for cluster in solution.keys():
+        for points in solution[cluster]:
+            distance = euclidean(cluster, points)
+            max_value = max(distance, max_value)
+    return max_value
 
 def compute_ball_weight(center, free_points, free_weights, r, alpha):
     #inefficent, precomputer distances are probably better
@@ -147,8 +151,10 @@ def main():
             weights.append(1)
     solution, r = SeqWeightedOutliers(inputPoints, weights, k, z, 0)
     print(solution)
+    max = ComputeObjective(0,solution, 0)
+    print(max)
     #need to visualize the results
-    fig, ax = plt.subplots(figsize=(8,8), layout='constrained')
+    fig, ax = plt.subplots(figsize=(8,8))
     input_points_x = []
     input_points_y = []
     for point in inputPoints:
