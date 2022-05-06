@@ -4,15 +4,13 @@ import csv
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 import numpy as np
+from time import time
 
 '''
 TODO:
 - finish basic implementation
-    - add objective function computation
-    - format output as requested
     - check ouput aganist correct values
     - use time to compute performance
-    - add plotting 
 - optimize
     - see what kind of debug tools can be used to check performance
     - precompute distances
@@ -34,6 +32,18 @@ def euclidean(point1, point2):
         diff = (point1[i]-point2[i])
         res += diff*diff
     return math.sqrt(res)
+
+
+def compute_rmin(points):
+    #jesus christ
+    rmin = math.inf
+    for point1 in points:
+        for point2 in points:
+            if point1 != point2:
+                dist=euclidean(point1, point2)
+                if dist < rmin:
+                    rmin = dist
+    return rmin/2
 
 
 
@@ -69,7 +79,8 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         # we raise r
         '''
     iteration = 0
-    r = 0.1 #bad but idc
+    r_min = compute_rmin(points.copy()[k+z+1:])
+    r=r_min
     solution = {}
     free_points = []
     free_points_weight = sum(weights)
@@ -80,7 +91,7 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         free_points = points.copy()
         free_weights = weights.copy()
         solution = {}
-        free_points_weight = sum(free_weights) # not a full weight implementation
+        free_points_weight = sum(free_weights) 
         inside_iter = 0
         while (len(solution) < k) and (free_points_weight > 0):
             inside_iter += 1
@@ -93,11 +104,10 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
                     maxim = ball_weight
                     new_center = point
             solution[new_center] = []
-            #free_points_weight -= free_weights[free_points.index(new_center)]
-            del free_weights[free_points.index(new_center)] # or remember the weight of the center and remove(weight)
+
+            del free_weights[free_points.index(new_center)]
             free_points.remove(new_center)
             new_points = free_points.copy()
-            #new_weights = free_weights.copy()
             for point in new_points:
                 distance = euclidean(new_center, point)
                 if distance < (3+4*alpha)*r:
@@ -107,12 +117,12 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
                     solution[new_center].append(point)
             free_points_weight = sum(free_weights)
         if free_points_weight <= z:
-            return solution, r
+            return solution, r_min, r, iteration
         else:
             r = 2*r
 
 def ComputeObjective(inputPoints, solution, z):
-    max_value = 0;
+    max_value = 0
     for cluster in solution.keys():
         for points in solution[cluster]:
             distance = euclidean(cluster, points)
@@ -121,7 +131,6 @@ def ComputeObjective(inputPoints, solution, z):
 
 def compute_ball_weight(center, free_points, free_weights, r, alpha):
     #inefficent, precomputer distances are probably better
-    # does not support weights
     ball_weight = 0
     iteration = 0
     for point in free_points:
@@ -134,13 +143,12 @@ def compute_ball_weight(center, free_points, free_weights, r, alpha):
 
 def main():
     #declare variables
-    filename = "C:/Users/super/Desktop/Universita/Big Data/Homeworks/Homework2/uber-small.csv"
-    filename = "C:/Users/super/Desktop/Universita/Big Data/Homeworks/Homework2/testdataHW2.csv"
+
+    filename = "Homework2/testdataHW2.csv"
     k = 3
     z = 0
     alpha = 0
 
-    print("CWD: ", os.getcwd())
     
     # read file data
     with open(filename) as csv_file:
@@ -150,10 +158,21 @@ def main():
         for line in csv_data:
             inputPoints.append((float(line[0]), float(line[1])))
             weights.append(1)
-    solution, r = SeqWeightedOutliers(inputPoints, weights, k, z, 0)
-    print(solution)
-    max = ComputeObjective(0,solution, 0)
-    print(max)
+    start = time()
+    solution, rmin, r, n_iters = SeqWeightedOutliers(inputPoints, weights, k, z, 0)
+    diff = time() - start
+    objective = ComputeObjective(0, solution, 0)
+
+    # output as required
+    print("input size n = ", len(inputPoints))
+    print("Number of centers k = ", k)
+    print("Number of outliers z = ", z)
+    print("Initial guess = ", rmin) 
+    print("Final guess = ", r)
+    print("Number of guesses = ", n_iters)
+    print("Objective function = ", objective)  # ok idk
+    print("Time of SeqWeightedOutliers = ", diff * 1000) # ok we need time.time
+
     #need to visualize the results
     fig, ax = plt.subplots(figsize=(8,8))
     input_points_x = []
