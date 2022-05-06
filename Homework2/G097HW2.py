@@ -71,10 +71,10 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
                 if distance < (3+4*alpha)*r:
                     free_points.remove(point)
             free_points_weight = len(free_points)
-            if free_points_weight < z:
-                return solution
-            else:
-                r = 2*r
+        if free_points_weight < z:
+            return solution
+        else:
+            r = 2*r
 
 def ComputeObjective(inputPoints, solution, z):
     objetive = 0 #not roght now
