@@ -2,6 +2,7 @@ import os
 import math
 import csv 
 import matplotlib.pyplot as plt
+from matplotlib.patches import Ellipse
 import numpy as np
 
 '''
@@ -69,14 +70,15 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         '''
     iteration = 0
     r = 0.1 #bad but idc
-    solution = []
+    solution = {}
     free_points = []
     while True and iteration < 1000:
         iteration += 1
         print("ITER: ", iteration)
         print("R: ", r)
         free_points = points.copy()
-        solution = []
+        solution = {}
+
         free_points_weight = len(points) # not a full weight implementation
         inside_iter = 0
         while (len(solution) < k) and (free_points_weight > 0):
@@ -89,16 +91,17 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
                 if ball_weight > max:
                     max = ball_weight
                     new_center = point
-            solution.append(new_center)
+            solution[new_center] = []
             free_points.remove(new_center)
             new_points = free_points.copy()
             for point in new_points:
                 distance = euclidean(new_center, point)
                 if distance < (3+4*alpha)*r:
                     free_points.remove(point)
+                    solution[new_center].append(point)
             free_points_weight = len(free_points)
         if free_points_weight < z:
-            return solution
+            return solution, r
         else:
             r = 2*r
 
@@ -121,8 +124,8 @@ def main():
     #declare variables
     filename = "Homework2/uber-small.csv"
     filename = "Homework2/testdataHW2.csv"
-    k = 2
-    z = 2
+    k = 3
+    z = 0
     alpha = 0
 
     print("CWD: ", os.getcwd())
@@ -135,7 +138,7 @@ def main():
         for line in csv_data:
             inputPoints.append((float(line[0]), float(line[1])))
             weights.append(1)
-    solution = SeqWeightedOutliers(inputPoints, weights, k, z, 0)
+    solution, r = SeqWeightedOutliers(inputPoints, weights, k, z, 0)
     print(solution)
     #need to visualize the results
     fig, ax = plt.subplots(figsize=(8,8), layout='constrained')
@@ -149,9 +152,11 @@ def main():
 
     solution_x = []
     solution_y = []    
-    for point in solution:
-        solution_x.append(point[0])
-        solution_y.append(point[1])
+    for center in solution.keys():
+        solution_x.append(center[0])
+        solution_y.append(center[1])
+        circle = Ellipse((center[0], center[1]), width=3*r, height=3*r,facecolor=None, edgecolor="green")
+        ax.add_patch(circle)
 
     ax.scatter(solution_x, solution_y, c="red")
 
