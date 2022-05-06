@@ -4,6 +4,27 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 
+'''
+TODO:
+- finish basic implementation
+    - add objective function computation
+    - format output as requested
+    - check ouput aganist correct values
+    - use time to compute performance
+    - add plotting 
+- optimize
+    - see what kind of debug tools can be used to check performance
+    - precompute distances
+        - optmize precomputeation to avoid usless and doubles
+    - find other methods
+    - see if numpy helps with performance
+- other
+    - show em how to setup either SSH keys for linux automatic login in github or credential storage in Windows 
+    - we might want to use only one branch, and everyone has a differetn file, line HW2_l, HW2_m, HW2_p, and we combine them together, and push the final version only to the main branch
+'''
+
+
+
 # euclidean distance function
 # copied from the prof
 def euclidean(point1, point2):
@@ -47,15 +68,19 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         # we raise r
         '''
     iteration = 0
-    r = 0.5 #bad but idc
+    r = 0.1 #bad but idc
     solution = []
     free_points = []
-    while True:
+    while True and iteration < 1000:
         iteration += 1
-        free_points = points
+        print("ITER: ", iteration)
+        print("R: ", r)
+        free_points = points.copy()
         solution = []
         free_points_weight = len(points) # not a full weight implementation
+        inside_iter = 0
         while (len(solution) < k) and (free_points_weight > 0):
+            inside_iter += 1
             max = 0
             new_center = None
             for point in free_points:
@@ -66,7 +91,8 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
                     new_center = point
             solution.append(new_center)
             free_points.remove(new_center)
-            for point in free_points:
+            new_points = free_points.copy()
+            for point in new_points:
                 distance = euclidean(new_center, point)
                 if distance < (3+4*alpha)*r:
                     free_points.remove(point)
@@ -81,7 +107,7 @@ def ComputeObjective(inputPoints, solution, z):
     return objective
 
 def compute_ball_weight(center, free_points, r, alpha):
-    #inefficent, precomputer distances are robbly better
+    #inefficent, precomputer distances are probably better
     # does not support weights
     ball_weight = 0
     for point in free_points:
@@ -113,11 +139,24 @@ def main():
     print(solution)
     #need to visualize the results
     fig, ax = plt.subplots(figsize=(8,8), layout='constrained')
-    
-    ax.scatter(inputPoints, inputPoints)
+    input_points_x = []
+    input_points_y = []
+    for point in inputPoints:
+        input_points_x.append(point[0])
+        input_points_y.append(point[1])
+
+    ax.scatter(input_points_x, input_points_y)
+
+    solution_x = []
+    solution_y = []    
+    for point in solution:
+        solution_x.append(point[0])
+        solution_y.append(point[1])
+
+    ax.scatter(solution_x, solution_y, c="red")
+
+
     plt.show()
-
-
 
 
 
