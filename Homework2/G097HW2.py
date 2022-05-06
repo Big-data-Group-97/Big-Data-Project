@@ -1,6 +1,6 @@
 import os
 import math
-import csv 
+import csv
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 import numpy as np
@@ -72,14 +72,14 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
     r = 0.1 #bad but idc
     solution = {}
     free_points = []
-    while True and iteration < 1000:
+    while True:
         iteration += 1
         print("ITER: ", iteration)
         print("R: ", r)
         free_points = points.copy()
+        free_weights = weights.copy()
         solution = {}
-
-        free_points_weight = len(points) # not a full weight implementation
+        free_points_weight = sum(free_weights) # not a full weight implementation
         inside_iter = 0
         while (len(solution) < k) and (free_points_weight > 0):
             inside_iter += 1
@@ -87,19 +87,24 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
             new_center = None
             for point in free_points:
                 ball_weight = compute_ball_weight(
-                    point, free_points, r, alpha)
+                    point, free_points, free_weights, r, alpha)
                 if ball_weight > max:
                     max = ball_weight
                     new_center = point
             solution[new_center] = []
+            free_points_weight -= free_weights[free_points.index(new_center)]
+            del free_weights[free_points.index(new_center)] # or remember the weight of the center and remove(weight)
             free_points.remove(new_center)
             new_points = free_points.copy()
+            new_weights = free_weights.copy()
             for point in new_points:
                 distance = euclidean(new_center, point)
                 if distance < (3+4*alpha)*r:
+                    i = new_points.index(point)
+                    free_points_weight -= new_weights[i]
+                    del free_weights[i]
                     free_points.remove(point)
                     solution[new_center].append(point)
-            free_points_weight = len(free_points)
         if free_points_weight < z:
             return solution, r
         else:
@@ -109,14 +114,16 @@ def ComputeObjective(inputPoints, solution, z):
     objetive = 0 #not roght now
     return objective
 
-def compute_ball_weight(center, free_points, r, alpha):
+def compute_ball_weight(center, free_points, free_weights, r, alpha):
     #inefficent, precomputer distances are probably better
     # does not support weights
     ball_weight = 0
+    iteration = 0
     for point in free_points:
         distance = euclidean(center, point)
         if distance < (1+2*alpha)*r:
-            ball_weight += 1
+            ball_weight += free_weights[iteration]
+        iteration+=1
     return ball_weight
 
 
