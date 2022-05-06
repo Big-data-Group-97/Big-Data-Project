@@ -72,7 +72,8 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
     r = 0.1 #bad but idc
     solution = {}
     free_points = []
-    while True:
+    free_points_weight = sum(weights)
+    while True and iteration < 100:
         iteration += 1
         print("ITER: ", iteration)
         print("R: ", r)
@@ -83,29 +84,29 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         inside_iter = 0
         while (len(solution) < k) and (free_points_weight > 0):
             inside_iter += 1
-            max = 0
+            maxim = 0
             new_center = None
             for point in free_points:
                 ball_weight = compute_ball_weight(
                     point, free_points, free_weights, r, alpha)
-                if ball_weight > max:
-                    max = ball_weight
+                if ball_weight > maxim:
+                    maxim = ball_weight
                     new_center = point
             solution[new_center] = []
-            free_points_weight -= free_weights[free_points.index(new_center)]
+            #free_points_weight -= free_weights[free_points.index(new_center)]
             del free_weights[free_points.index(new_center)] # or remember the weight of the center and remove(weight)
             free_points.remove(new_center)
             new_points = free_points.copy()
-            new_weights = free_weights.copy()
+            #new_weights = free_weights.copy()
             for point in new_points:
                 distance = euclidean(new_center, point)
                 if distance < (3+4*alpha)*r:
                     i = new_points.index(point)
-                    free_points_weight -= new_weights[i]
-                    del free_weights[i]
+                    free_weights[i] = 0
                     free_points.remove(point)
                     solution[new_center].append(point)
-        if free_points_weight < z:
+            free_points_weight = sum(free_weights)
+        if free_points_weight <= z:
             return solution, r
         else:
             r = 2*r
@@ -133,8 +134,8 @@ def compute_ball_weight(center, free_points, free_weights, r, alpha):
 
 def main():
     #declare variables
-    filename = "Homework2/uber-small.csv"
-    filename = "Homework2/testdataHW2.csv"
+    filename = "C:/Users/super/Desktop/Universita/Big Data/Homeworks/Homework2/uber-small.csv"
+    filename = "C:/Users/super/Desktop/Universita/Big Data/Homeworks/Homework2/testdataHW2.csv"
     k = 3
     z = 0
     alpha = 0
