@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 import numpy as np
 from time import time
+import argparse
+
 
 '''
 TODO:
@@ -84,10 +86,8 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
     solution = {}
     free_points = []
     free_points_weight = sum(weights)
-    while True and iteration < 100:
+    while True:
         iteration += 1
-        print("ITER: ", iteration)
-        print("R: ", r)
         free_points = points.copy()
         free_weights = weights.copy()
         solution = {}
@@ -100,7 +100,7 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
             for point in free_points:
                 ball_weight = compute_ball_weight(
                     point, free_points, free_weights, r, alpha)
-                if ball_weight > maxim:
+                if ball_weight >= maxim:
                     maxim = ball_weight
                     new_center = point
             solution[new_center] = []
@@ -110,14 +110,17 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
             new_points = free_points.copy()
             for point in new_points:
                 distance = euclidean(new_center, point)
-                if distance < (3+4*alpha)*r:
+                if distance <= (3+4*alpha)*r:
                     i = new_points.index(point)
                     free_weights[i] = 0
                     free_points.remove(point)
                     solution[new_center].append(point)
             free_points_weight = sum(free_weights)
         if free_points_weight <= z:
-            return solution, r_min, r, iteration
+            print("Initial guess = ", r_min)
+            print("Final guess = ", r)
+            print("Number of guesses = ", iteration)
+            return solution
         else:
             r = 2*r
 
@@ -135,19 +138,44 @@ def compute_ball_weight(center, free_points, free_weights, r, alpha):
     iteration = 0
     for point in free_points:
         distance = euclidean(center, point)
-        if distance < (1+2*alpha)*r:
+        if distance <= (1+2*alpha)*r:
             ball_weight += free_weights[iteration]
         iteration+=1
     return ball_weight
 
 
+def argument_parser():  # description of the program and command line arguments
+    parser = argparse.ArgumentParser(
+        description="Homewroks 2 for Group 097 - ann implementation of KcenterOUT for k center clustering with outliers")
+    parser.add_argument("-f", dest="filename",
+                        help="Filename of .csv data to compute. Defaults to ./testdataHW2.csv", default="./testdataHW2.csv")
+    parser.add_argument("-k", dest="k",
+                    help="max value for number of centers. Defaults to 3", default=3, type=int)
+    parser.add_argument("-z", dest="z",
+                        help="Number of outliers. Defaults to 0", default=0, type=int)
+    parser.add_argument("-alpha", dest="alpha",
+                    help="added component for the radius of the ball. Defaults to 0", default=0,
+                        type=int)
+    return vars(parser.parse_args())
+
+def reshape_solution(prev_solution):
+    solution = []
+    for key in prev_solution.keys():
+        solution.append(key)
+    return solution
+
 def main():
     #declare variables
+    args = argument_parser()  # command line arguments
+    if args:
+        filename, k, z, alpha = args["filename"], args["k"], args["z"], args["alpha"]
+    else:
+        filename = "Homework2/testdataHW2.csv"
+        k = 3
+        z = 0
+        alpha = 0
 
-    filename = "Homework2/testdataHW2.csv"
-    k = 3
-    z = 0
-    alpha = 0
+
 
     
     # read file data
@@ -158,20 +186,19 @@ def main():
         for line in csv_data:
             inputPoints.append((float(line[0]), float(line[1])))
             weights.append(1)
-    start = time()
-    solution, rmin, r, n_iters = SeqWeightedOutliers(inputPoints, weights, k, z, 0)
-    diff = time() - start
-    objective = ComputeObjective(0, solution, 0)
-
-    # output as required
+    #moved output around to have a less confusing return
     print("input size n = ", len(inputPoints))
     print("Number of centers k = ", k)
     print("Number of outliers z = ", z)
-    print("Initial guess = ", rmin) 
-    print("Final guess = ", r)
-    print("Number of guesses = ", n_iters)
-    print("Objective function = ", objective)  # ok idk
-    print("Time of SeqWeightedOutliers = ", diff * 1000) # ok we need time.time
+    start = time()
+    # now some printing is done inside SeqWeightedOutliers as it makes for a cleaner return
+    solution = SeqWeightedOutliers(inputPoints, weights, k, z, alpha)
+    diff = time() - start
+    objective = ComputeObjective(0, solution, 0)
+    solution = reshape_solution(solution)
+    # output remaning values
+    print("Objective function = ", objective) 
+    print("Time of SeqWeightedOutliers = ", diff * 1000)
 
     #need to visualize the results
     fig, ax = plt.subplots(figsize=(8,8))
@@ -185,11 +212,11 @@ def main():
 
     solution_x = []
     solution_y = []    
-    for center in solution.keys():
+    for center in solution:
         solution_x.append(center[0])
         solution_y.append(center[1])
-        circle = Ellipse((center[0], center[1]), width=3*r, height=3*r,facecolor=None, edgecolor="green")
-        ax.add_patch(circle)
+        #circle = Ellipse((center[0], center[1]), width=3*r, height=3*r,facecolor=None, edgecolor="green")
+        #ax.add_patch(circle)
 
     ax.scatter(solution_x, solution_y, c="red")
 
