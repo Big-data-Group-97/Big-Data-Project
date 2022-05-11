@@ -6,6 +6,7 @@ from matplotlib.patches import Ellipse
 import numpy as np
 from time import time
 import argparse
+import itertools
 
 
 '''
@@ -84,38 +85,38 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
     r_min = compute_rmin(points.copy()[k+z+1:])
     r=r_min
     solution = {}
-    free_points = []
-    free_points_weight = sum(weights)
     while True:
         iteration += 1
-        free_points = points.copy()
-        free_weights = weights.copy()
+        print("iter ", iteration)
+        print("r ", r)
         solution = {}
-        free_points_weight = sum(free_weights) 
+        tmp_points = points.copy()
+        tmp_weights = weights.copy()
+        free_points_weight = sum(tmp_weights)
+        # free_points is now a list of touples that contain both weight and position, so non more two lists
+        free_points = list(zip(tmp_points, tmp_weights))
         inside_iter = 0
         while (len(solution) < k) and (free_points_weight > 0):
             inside_iter += 1
-            maxim = 0
+            maxim = -1
             new_center = None
-            for point in free_points:
+            for point, weight in free_points:
                 ball_weight = compute_ball_weight(
-                    point, free_points, free_weights, r, alpha)
-                if ball_weight >= maxim:
+                    point, free_points, r, alpha)
+                if ball_weight > maxim:
                     maxim = ball_weight
-                    new_center = point
+                    new_center = point 
+                    new_center_weight = weight
             solution[new_center] = []
-
-            del free_weights[free_points.index(new_center)]
-            free_points.remove(new_center)
+            free_points.remove((new_center, new_center_weight))
+            free_points_weight -= new_center_weight
             new_points = free_points.copy()
-            for point in new_points:
+            for point, weight in new_points:
                 distance = euclidean(new_center, point)
-                if distance <= (3+4*alpha)*r:
-                    i = new_points.index(point)
-                    free_weights[i] = 0
-                    free_points.remove(point)
+                if distance <= (3+(4*alpha))*r:
                     solution[new_center].append(point)
-            free_points_weight = sum(free_weights)
+                    free_points.remove((point, weight))
+                    free_points_weight -= weight
         if free_points_weight <= z:
             print("Initial guess = ", r_min)
             print("Final guess = ", r)
@@ -132,15 +133,13 @@ def ComputeObjective(inputPoints, solution, z):
             max_value = max(distance, max_value)
     return max_value
 
-def compute_ball_weight(center, free_points, free_weights, r, alpha):
+def compute_ball_weight(center, free_points, r, alpha):
     #inefficent, precomputer distances are probably better
     ball_weight = 0
-    iteration = 0
-    for point in free_points:
+    for point, weight in free_points:
         distance = euclidean(center, point)
-        if distance <= (1+2*alpha)*r:
-            ball_weight += free_weights[iteration]
-        iteration+=1
+        if distance <= (1+(2*alpha))*r:
+            ball_weight += weight
     return ball_weight
 
 
@@ -148,7 +147,7 @@ def argument_parser():  # description of the program and command line arguments
     parser = argparse.ArgumentParser(
         description="Homewroks 2 for Group 097 - ann implementation of KcenterOUT for k center clustering with outliers")
     parser.add_argument("-f", dest="filename",
-                        help="Filename of .csv data to compute. Defaults to ./testdataHW2.csv", default="./testdataHW2.csv")
+                        help="Filename of .csv data to compute. Defaults to Homework2/testdataHW2.csv", default="Homework2/testdataHW2.csv")
     parser.add_argument("-k", dest="k",
                     help="max value for number of centers. Defaults to 3", default=3, type=int)
     parser.add_argument("-z", dest="z",
@@ -221,7 +220,7 @@ def main():
     ax.scatter(solution_x, solution_y, c="red")
 
 
-    plt.show()
+    #plt.show()
 
 
 

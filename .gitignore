@@ -1,6 +1,7 @@
 *.md
 *.csv
 *.pdf
+*.txt
 WordCountExample.py
 
 # Byte-compiled / optimized / DLL files
