@@ -79,7 +79,7 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         # we raise r
         '''
     iteration = 0
-    r_min = compute_rmin(points.copy()[k+z+1:])
+    r_min = compute_rmin(points.copy()[:k+z+1])
     r=r_min
     solution = {}
     while True:
