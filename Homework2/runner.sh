@@ -8,9 +8,13 @@ if [ -s out.txt ]; then
 fi
 touch out.txt
 
-python G097HW2.py -f artifical9000.csv -k 9 -z 0 &>> out.txt
+echo "RUNNING ON artificial9000.csv WITH K 9 Z 0"
+python3 G097HW2.py -f artificial9000.csv -k 9 -z 0 &>> out.txt
 echo "" >> out.txt 
-python G097HW2.py -f artifical9000.csv -k 9 -z 200 &>> out.txt
+echo "RUNNING ON artificial9000.csv WITH K 9 Z 200"
+python3 G097HW2.py -f artificial9000.csv -k 9 -z 200 &>> out.txt
 echo "" >> out.txt 
-python G097HW2.py -f artifical9000.csv -k 9 -z 300 &>> out.txt
+echo "RUNNING ON artificial9000.csv WITH K 9 Z 300"
+python3 G097HW2.py -f artificial9000.csv -k 9 -z 300 &>> out.txt
+
 echo "DONE"

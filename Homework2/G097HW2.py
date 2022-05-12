@@ -1,9 +1,6 @@
 import os
 import math
 import csv
-import matplotlib.pyplot as plt
-from matplotlib.patches import Ellipse
-import numpy as np
 from time import time
 import argparse
 import itertools
@@ -174,8 +171,6 @@ def main():
         z = 0
         alpha = 0
 
-
-
     
     # read file data
     with open(filename) as csv_file:
@@ -198,30 +193,6 @@ def main():
     # output remaning values
     print("Objective function = ", objective) 
     print("Time of SeqWeightedOutliers = ", diff * 1000)
-
-    #need to visualize the results
-    fig, ax = plt.subplots(figsize=(8,8))
-    input_points_x = []
-    input_points_y = []
-    for point in inputPoints:
-        input_points_x.append(point[0])
-        input_points_y.append(point[1])
-
-    ax.scatter(input_points_x, input_points_y)
-
-    solution_x = []
-    solution_y = []    
-    for center in solution:
-        solution_x.append(center[0])
-        solution_y.append(center[1])
-        #circle = Ellipse((center[0], center[1]), width=3*r, height=3*r,facecolor=None, edgecolor="green")
-        #ax.add_patch(circle)
-
-    ax.scatter(solution_x, solution_y, c="red")
-
-
-    #plt.show()
-
 
 
 
