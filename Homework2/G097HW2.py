@@ -4,6 +4,7 @@ import csv
 from time import time
 import argparse
 import itertools
+print(os.getcwd())
 
 
 '''
@@ -79,7 +80,7 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
         # we raise r
         '''
     iteration = 0
-    r_min = compute_rmin(points.copy()[:k+z+1])
+    r_min = compute_rmin(points.copy()[:z+k+1])
     r=r_min
     solution = {}
     while True:
@@ -110,7 +111,7 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
             new_points = free_points.copy()
             for point, weight in new_points:
                 distance = euclidean(new_center, point)
-                if distance <= (3+(4*alpha))*r:
+                if distance < (3+(4*alpha))*r:
                     solution[new_center].append(point)
                     free_points.remove((point, weight))
                     free_points_weight -= weight
@@ -118,18 +119,31 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
             print("Initial guess = ", r_min)
             print("Final guess = ", r)
             print("Number of guesses = ", iteration)
-            return solution
+            return solution, free_points
         else:
             r = 2*r
+def ComputeObjective(inputPoints, solution, z_points, version):
+    if (version == 0):
+        max_value = 0
+        for cluster in solution.keys():
+            for points in solution[cluster]:
+                distance = euclidean(cluster, points)
+                max_value = max(distance, max_value)
+        return max_value
+    else:
+        objective = 0
+        z_points = [i[0] for i in z_points]
+        for point in inputPoints:
+            if point not in z_points:
+                minimum = math.inf
+                for cluster in solution.keys(): 
+                    dist = euclidean(cluster, point)
+                    minimum = min(minimum, dist)
+                objective = max(objective, minimum)
+        return objective
 
-def ComputeObjective(inputPoints, solution, z):
-    max_value = 0
-    for cluster in solution.keys():
-        for points in solution[cluster]:
-            distance = euclidean(cluster, points)
-            max_value = max(distance, max_value)
-    return max_value
-
+       # for points in inputPoints:
+            
 def compute_ball_weight(center, free_points, r, alpha):
     #inefficent, precomputer distances are probably better
     ball_weight = 0
@@ -186,9 +200,9 @@ def main():
     print("Number of outliers z = ", z)
     start = time()
     # now some printing is done inside SeqWeightedOutliers as it makes for a cleaner return
-    solution = SeqWeightedOutliers(inputPoints, weights, k, z, alpha)
+    solution, z_points = SeqWeightedOutliers(inputPoints, weights, k, z, alpha)
     diff = time() - start
-    objective = ComputeObjective(0, solution, 0)
+    objective = ComputeObjective(inputPoints, solution, z_points, 1)
     solution = reshape_solution(solution)
     # output remaning values
     print("Objective function = ", objective) 
