@@ -82,12 +82,12 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
     iteration = 0
     r_min = compute_rmin(points.copy()[:z+k+1])
     r=r_min
-    solution = {}
+    solution = []
     while True:
         iteration += 1
         print("iter ", iteration)
         print("r ", r)
-        solution = {}
+        solution = []
         tmp_points = points.copy()
         tmp_weights = weights.copy()
         free_points_weight = sum(tmp_weights)
@@ -105,42 +105,32 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
                     maxim = ball_weight
                     new_center = point 
                     new_center_weight = weight
-            solution[new_center] = []
+            solution.append(new_center)
             free_points.remove((new_center, new_center_weight))
             free_points_weight -= new_center_weight
             new_points = free_points.copy()
             for point, weight in new_points:
                 distance = euclidean(new_center, point)
                 if distance < (3+(4*alpha))*r:
-                    solution[new_center].append(point)
                     free_points.remove((point, weight))
                     free_points_weight -= weight
         if free_points_weight <= z:
             print("Initial guess = ", r_min)
             print("Final guess = ", r)
             print("Number of guesses = ", iteration)
-            return solution, free_points
+            return solution
         else:
             r = 2*r
-def ComputeObjective(inputPoints, solution, z_points, version):
-    if (version == 0):
-        max_value = 0
-        for cluster in solution.keys():
-            for points in solution[cluster]:
-                distance = euclidean(cluster, points)
-                max_value = max(distance, max_value)
-        return max_value
-    else:
-        objective = 0
-        z_points = [i[0] for i in z_points]
-        for point in inputPoints:
-            if point not in z_points:
-                minimum = math.inf
-                for cluster in solution.keys(): 
-                    dist = euclidean(cluster, point)
-                    minimum = min(minimum, dist)
-                objective = max(objective, minimum)
-        return objective
+def ComputeObjective(inputPoints, solution, z):
+    distances = []
+    for point in inputPoints:
+        minimum = math.inf
+        for cluster in solution: 
+                dist = euclidean(cluster, point)
+                minimum = min(minimum, dist)
+        distances.append(minimum)
+    distances = sorted(distances, reverse=True)
+    return distances[z]
 
        # for points in inputPoints:
             
@@ -200,10 +190,10 @@ def main():
     print("Number of outliers z = ", z)
     start = time()
     # now some printing is done inside SeqWeightedOutliers as it makes for a cleaner return
-    solution, z_points = SeqWeightedOutliers(inputPoints, weights, k, z, alpha)
+    solution = SeqWeightedOutliers(inputPoints, weights, k, z, alpha)
     diff = time() - start
-    objective = ComputeObjective(inputPoints, solution, z_points, 1)
-    solution = reshape_solution(solution)
+    objective = ComputeObjective(inputPoints, solution, z)
+    #solution = reshape_solution(solution)
     # output remaning values
     print("Objective function = ", objective) 
     print("Time of SeqWeightedOutliers = ", diff * 1000)
