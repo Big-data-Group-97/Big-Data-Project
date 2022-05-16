@@ -85,8 +85,6 @@ def SeqWeightedOutliers(points, weights, k, z, alpha):
     solution = []
     while True:
         iteration += 1
-        print("iter ", iteration)
-        print("r ", r)
         solution = []
         tmp_points = points.copy()
         tmp_weights = weights.copy()
