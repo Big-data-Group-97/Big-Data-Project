@@ -126,7 +126,7 @@ def MR_kCenterOutliers(points, k, z, L):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Method extractCoreset: extract a coreset from a given iterator
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-def extractCoreset(iter):
+def extractCoreset(iter, k , z):
     partition = list(iter)
     centers = kCenterFFT(partition, k+z+1)
     weights = computeWeights(partition, centers)
@@ -185,7 +185,68 @@ def computeWeights(points, centers):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Method SeqWeightedOutliers: sequential k-center with outliers
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-def SeqWeightedOutliers (points, weights, k, z, alpha):
+def SeqWeightedOutliers(points, weights, k, z, alpha = 2):
+    iteration = 0
+    r_min = compute_rmin(points.copy()[:z+k+1])
+    r=r_min
+    solution = []
+    while True:
+        iteration += 1
+        solution = []
+        tmp_points = points.copy()
+        tmp_weights = weights.copy()
+        free_points_weight = sum(tmp_weights)
+        # free_points is now a list of touples that contain both weight and position, so non more two lists
+        free_points = list(zip(tmp_points, tmp_weights))
+        inside_iter = 0
+        while (len(solution) < k) and (free_points_weight > 0):
+            inside_iter += 1
+            maxim = -1
+            new_center = None
+            for point, weight in free_points:
+                ball_weight = compute_ball_weight(
+                    point, free_points, r, alpha)
+                if ball_weight > maxim:
+                    maxim = ball_weight
+                    new_center = point 
+                    new_center_weight = weight
+            solution.append(new_center)
+            free_points.remove((new_center, new_center_weight))
+            free_points_weight -= new_center_weight
+            new_points = free_points.copy()
+            for point, weight in new_points:
+                distance = euclidean(new_center, point)
+                if distance < (3+(4*alpha))*r:
+                    free_points.remove((point, weight))
+                    free_points_weight -= weight
+        if free_points_weight <= z:
+            print("Initial guess = ", r_min)
+            print("Final guess = ", r)
+            print("Number of guesses = ", iteration)
+            return solution
+        else:
+            r = 2*r
+
+def compute_ball_weight(center, free_points, r, alpha):
+    #inefficent, precomputer distances are probably better
+    ball_weight = 0
+    for point, weight in free_points:
+        distance = euclidean(center, point)
+        if distance <= (1+(2*alpha))*r:
+            ball_weight += weight
+    return ball_weight
+
+def compute_rmin(points):
+    #jesus christ
+    rmin = math.inf
+    for point1 in points:
+        for point2 in points:
+            if point1 != point2:
+                dist=euclidean(point1, point2)
+                if dist < rmin:
+                    rmin = dist
+    return rmin/2
+
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
@@ -195,7 +256,16 @@ def SeqWeightedOutliers (points, weights, k, z, alpha):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Method computeObjective: computes objective function
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-def computeObjective(points, centers, z):
+def computeObjective(inputPoints, solution, z):
+    distances = []
+    for point in inputPoints:
+        minimum = math.inf
+        for cluster in solution: 
+                dist = euclidean(cluster, point)
+                minimum = min(minimum, dist)
+        distances.append(minimum)
+    distances = sorted(distances, reverse=True)
+    return distances[z]
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
