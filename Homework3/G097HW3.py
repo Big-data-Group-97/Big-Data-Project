@@ -101,15 +101,15 @@ def MR_kCenterOutliers(points, k, z, L):
 
     
     #------------- ROUND 1 ---------------------------
-
+    time_start = time.time()
     coreset = points.mapPartitions(extractCoreset)
-    
     # END OF ROUND 1
 
     
     #------------- ROUND 2 ---------------------------
-    
     elems = coreset.collect()
+    time_r1 = time.time() - time_start
+    time_start = time.time()
     coresetPoints = list()
     coresetWeights = list()
     for i in elems:
@@ -117,6 +117,11 @@ def MR_kCenterOutliers(points, k, z, L):
         coresetWeights.append(i[1])
     
     # ****** ADD YOUR CODE
+    solution = SeqWeightedOutliers(coresetPoints, coresetWeights, k, z, alpha=2)
+    computeObjective(coresetPoints, solution, z)
+    time_r2 = time.time() - time_start
+    print("Time Round 1: ", time_r1)
+    print("Time Round 2: ", time_r2)
     # ****** Compute the final solution (run SeqWeightedOutliers with alpha=2)
     # ****** Measure and print times taken by Round 1 and Round 2, separately
     # ****** Return the final solution
@@ -184,7 +189,7 @@ def computeWeights(points, centers):
 
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Method SeqWeightedOutliers: sequential k-center with outliers
-# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&weigcoresetWeightshts&&&&&&&&&&&&&&&&&&&&&&
 def SeqWeightedOutliers(points, weights, k, z, alpha = 2):
     iteration = 0
     r_min = compute_rmin(points.copy()[:z+k+1])
