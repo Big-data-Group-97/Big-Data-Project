@@ -263,14 +263,22 @@ def compute_rmin(points):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def computeObjective(inputPoints, solution, z):
     distances = []
+    list_sorted = False
     for point in inputPoints:
         minimum = math.inf
         for cluster in solution: 
                 dist = euclidean(cluster, point)
                 minimum = min(minimum, dist)
-        distances.append(minimum)
-    distances = sorted(distances, reverse=True)
-    return distances[z]
+        if len(distances) < z+1:
+            distances.append(minimum)
+        else:
+            if not list_sorted:
+                distances = sorted(distances, reverse=True)
+            biggest_loser = next(filter(lambda x: x < minimum, distances), None)
+            if biggest_loser:
+                distances.insert(distances,index(biggest_loser), minimum)
+                distances.pop()
+    return distances.pop()
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
