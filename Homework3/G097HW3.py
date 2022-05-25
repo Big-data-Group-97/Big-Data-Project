@@ -278,6 +278,7 @@ def computeObjective(inputPoints, solution, z):
         else:
             if not list_sorted:
                 distances = sorted(distances, reverse=True)
+                list_sorted = True
             biggest_loser = next(filter(lambda x: x < minimum, distances), None)
             if biggest_loser:
                 distances.insert(distances.index(biggest_loser), minimum)
