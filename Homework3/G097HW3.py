@@ -24,7 +24,7 @@ def main():
     end = 0
 
     # Set Spark Configuration
-    conf = SparkConf().setAppName('MR k-center with outliers').setMaster("local[*]")
+    conf = SparkConf().setAppName('MR k-center with outliers')  
     sc = SparkContext(conf=conf)
     sc.setLogLevel("WARN")
 
