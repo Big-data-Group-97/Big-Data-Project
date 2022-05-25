@@ -274,15 +274,14 @@ def computeObjective(inputPoints, solution, z):
             distances.append(minimum)
         #first sorting done
         if distances.count == z+1 and count == 0:
-            distances = sorted(distances, reverse=True)
+            distances = sorted(distances, reverse=False)
             count = 1
         else:
-            #just to tied to find a better solution
-            for distance in distances:
-                if (minimum > distance):
+            for i in range(0, distances.count):
+                if (minimum > distances[i]):
+                    distances[i].insert(minimum)
                     distances.pop()
-                    distances.append(minimum)
-                    distances = sorted(distances, reverse = True)
+                    break
     return distances
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
