@@ -271,12 +271,11 @@ def computeObjective(inputPoints, solution, z):
                 dist = euclidean(cluster, point)
                 minimum = min(minimum, dist) 
         #if less distance of z+1    
-        if distances.count <= z + 1:
+        if distances.count <= z + 1 and count == 0:
             distances.append(minimum)
-        #first sorting done
-        if distances.count == z+1 and count == 0:
-            distances = sorted(distances, reverse=False)
-            count = 1
+            if distances.count == z+1 and count == 0:
+                distances = sorted(distances, reverse=False)
+                count = 1   
         else:
             for i in range(0, distances.count):
                 if (minimum > distances[i]):
