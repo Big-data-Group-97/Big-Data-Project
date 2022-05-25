@@ -118,10 +118,11 @@ def MR_kCenterOutliers(points, k, z, L):
     
     # ****** ADD YOUR CODE
     solution = SeqWeightedOutliers(coresetPoints, coresetWeights, k, z, alpha=2)
-    computeObjective(coresetPoints, solution, z)
     time_r2 = time.time() - time_start
     print("Time Round 1: ", time_r1)
     print("Time Round 2: ", time_r2)
+    return solution
+
     # ****** Compute the final solution (run SeqWeightedOutliers with alpha=2)
     # ****** Measure and print times taken by Round 1 and Round 2, separately
     # ****** Return the final solution
