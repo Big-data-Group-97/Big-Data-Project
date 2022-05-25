@@ -24,7 +24,11 @@ def main():
     end = 0
 
     # Set Spark Configuration
+<<<<<<< HEAD
     conf = SparkConf().setAppName('MR k-center with outliers')
+=======
+    conf = SparkConf().setAppName('MR k-center with outliers')  
+>>>>>>> origin/Martino's
     sc = SparkContext(conf=conf)
     sc.setLogLevel("WARN")
 
