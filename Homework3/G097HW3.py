@@ -267,21 +267,22 @@ def compute_rmin(points):
 def computeObjective(inputPoints, solution, z):
     distances = []
     count = 0
+    inputPoints = inputPoints.collect()
     for point in inputPoints:
         minimum = math.inf
         for cluster in solution: 
                 dist = euclidean(cluster, point)
                 minimum = min(minimum, dist) 
         #if less distance of z+1    
-        if distances.count <= z + 1 and count == 0:
+        if len(distances) <= z + 1 and count == 0:
             distances.append(minimum)
-            if distances.count == z+1 and count == 0:
+            if len(distances) == z+1 and count == 0:
                 distances = sorted(distances, reverse=False)
                 count = 1   
         else:
-            for i in range(0, distances.count):
+            for i in range(0, len(distances)):
                 if (minimum > distances[i]):
-                    distances[i].insert(minimum)
+                    distances.insert(i, minimum)
                     distances.pop()
                     break
     return distances
