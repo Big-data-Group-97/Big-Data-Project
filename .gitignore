@@ -3,6 +3,7 @@
 *.pdf
 *.txt
 *.zip
+*.sh
 WordCountExample.py
 
 # Byte-compiled / optimized / DLL files
