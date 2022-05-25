@@ -274,7 +274,7 @@ def computeObjective(inputPoints, solution, z):
                 dist = euclidean(cluster, point)
                 minimum = min(minimum, dist) 
         #if less distance of z+1    
-        if len(distances) <= z + 1 and count == 0:
+        if len(distances) < z + 1 and count == 0:
             distances.append(minimum)
             if len(distances) == z+1 and count == 0:
                 distances = sorted(distances, reverse=False)
@@ -285,7 +285,7 @@ def computeObjective(inputPoints, solution, z):
                     distances.insert(i, minimum)
                     distances.pop()
                     break
-    return distances
+    return distances[-1]
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
