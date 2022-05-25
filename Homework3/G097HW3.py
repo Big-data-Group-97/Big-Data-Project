@@ -24,11 +24,7 @@ def main():
     end = 0
 
     # Set Spark Configuration
-<<<<<<< HEAD
     conf = SparkConf().setAppName('MR k-center with outliers')
-=======
-    conf = SparkConf().setAppName('MR k-center with outliers')  
->>>>>>> origin/Martino's
     sc = SparkContext(conf=conf)
     sc.setLogLevel("WARN")
 
@@ -106,7 +102,7 @@ def MR_kCenterOutliers(points, k, z, L):
     
     #------------- ROUND 1 ---------------------------
     time_start = time.time()
-    coreset = points.mapPartitions(extractCoreset)
+    coreset = points.mapPartitions(lambda x: extractCoreset(x, k ,z ))
     # END OF ROUND 1
 
     
@@ -138,6 +134,8 @@ def MR_kCenterOutliers(points, k, z, L):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def extractCoreset(iter, k , z):
     partition = list(iter)
+    if len(partition) == 0 :
+        return []
     centers = kCenterFFT(partition, k+z+1)
     weights = computeWeights(partition, centers)
     c_w = list()
