@@ -24,7 +24,7 @@ def main():
     end = 0
 
     # Set Spark Configuration
-    conf = SparkConf().setAppName('MR k-center with outliers').setMaster("local[*]")
+    conf = SparkConf().setAppName('MR k-center with outliers')
     sc = SparkContext(conf=conf)
     sc.setLogLevel("WARN")
 
@@ -102,7 +102,7 @@ def MR_kCenterOutliers(points, k, z, L):
     
     #------------- ROUND 1 ---------------------------
     time_start = time.time()
-    coreset = points.mapPartitions(lambda x: extractCoreset(x, k, z))
+    coreset = points.mapPartitions(extractCoreset)
     # END OF ROUND 1
 
     
@@ -133,8 +133,6 @@ def MR_kCenterOutliers(points, k, z, L):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def extractCoreset(iter, k , z):
     partition = list(iter)
-    if len(partition) == 0:
-        return []
     centers = kCenterFFT(partition, k+z+1)
     weights = computeWeights(partition, centers)
     c_w = list()
@@ -265,16 +263,11 @@ def compute_rmin(points):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def computeObjective(inputPoints, solution, z):
     distances = []
-<<<<<<< HEAD
     count = 0
-=======
-    list_sorted = False
->>>>>>> origin/Martino's
     for point in inputPoints:
         minimum = math.inf
         for cluster in solution: 
                 dist = euclidean(cluster, point)
-<<<<<<< HEAD
                 minimum = min(minimum, dist) 
         #if less distance of z+1    
         if distances.count <= z + 1:
@@ -290,24 +283,9 @@ def computeObjective(inputPoints, solution, z):
                     distances.pop()
                     break
     return distances
-=======
-                minimum = min(minimum, dist)
-        if len(distances) < z+1:
-            distances.append(minimum)
-        else:
-            if not list_sorted:
-                distances = sorted(distances, reverse=True)
-            biggest_loser = next(filter(lambda x: x < minimum, distances), None)
-            if biggest_loser:
-                distances.insert(distances,index(biggest_loser), minimum)
-                distances.pop()
-    return distances.pop()
->>>>>>> origin/Martino's
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
-
-
 
 
 # Just start the main program
