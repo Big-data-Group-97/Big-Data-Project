@@ -1,0 +1,127 @@
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 2 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 2 &>> results.txt
+
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  2
+Time to read from file:  10752.610206604004  ms
+Initial guess =  1.1399024927905779
+Final guess =  1.1399024927905779
+Number of guesses =  1
+Time Round 1:  362674.9699115753  ms
+Time Round 2:  461.99488639831543  ms
+Objective function =  9.322641093439309
+Time to compute objective function:  41365.561962127686  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 4 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 4 &>> results.txt
+
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  4
+Time to read from file:  7309.426307678223  ms
+Initial guess =  1.0278825727394667
+Final guess =  1.0278825727394667
+Number of guesses =  1
+Time Round 1:  186232.0728302002  ms
+Time Round 2:  1162.6574993133545  ms
+Objective function =  7.62993982177614
+Time to compute objective function:  42097.036600112915  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 8 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 8 &>> results.txt
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  8
+Time to read from file:  5715.500593185425  ms
+Initial guess =  0.8416024477409122
+Final guess =  0.8416024477409122
+Number of guesses =  1
+Time Round 1:  93877.01654434204  ms
+Time Round 2:  3978.672504425049  ms
+Objective function =  6.549223218731887
+Time to compute objective function:  41600.40044784546  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 16 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 16 &>> results.txt
+
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  16
+Time to read from file:  5115.309238433838  ms
+Initial guess =  0.7302189380391007
+Final guess =  0.7302189380391007
+Number of guesses =  1
+Time Round 1:  48590.33942222595  ms
+Time Round 2:  14965.695142745972  ms
+Objective function =  6.264670795295668
+Time to compute objective function:  41383.63575935364  ms
+
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 2 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 2 &>> results.txt
+
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  2
+Time to read from file:  3684.9493980407715  ms
+Initial guess =  1.9450956274692508
+Final guess =  1.9450956274692508
+Number of guesses =  1
+Time Round 1:  2182.1300983428955  ms
+Time Round 2:  814.3877983093262  ms
+Objective function =  12.991348390371185
+Time to compute objective function:  299.5309829711914  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 4 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 4 &>> results.txt
+
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  4
+Time to read from file:  3687.0217323303223  ms
+Initial guess =  1.7487856501012355
+Final guess =  1.7487856501012355
+Number of guesses =  1
+Time Round 1:  1265.0153636932373  ms
+Time Round 2:  3524.021863937378  ms
+Objective function =  12.361843106915734
+Time to compute objective function:  308.5904121398926  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 8 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 8 &>> results.txt
+
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  8
+Time to read from file:  3818.5982704162598  ms
+Initial guess =  1.5948311822885823
+Final guess =  1.5948311822885823
+Number of guesses =  1
+Time Round 1:  702.0373344421387  ms
+Time Round 2:  14005.250215530396  ms
+Objective function =  12.122606072953126
+Time to compute objective function:  336.4992141723633  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 16 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 16 &>> results.txt
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  16
+Time to read from file:  4327.81982421875  ms
+Initial guess =  1.2446366939794116
+Final guess =  1.2446366939794116
+Number of guesses =  1
+Time Round 1:  421.4134216308594  ms
+Time Round 2:  57417.89102554321  ms
+Objective function =  11.430234993209893
+Time to compute objective function:  335.85572242736816  ms
+
