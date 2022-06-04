@@ -4,6 +4,7 @@
 *.txt
 *.zip
 *.sh
+*.docx
 WordCountExample.py
 
 # Byte-compiled / optimized / DLL files
