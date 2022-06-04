@@ -128,7 +128,7 @@ Objective function =  11.430234993209893
 Time to compute objective function:  335.85572242736816  ms
 
 
-
+MARTINO DATA
 
 spark-submit  --conf spark.pyspark.python=python3 --num-executors 2 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 2 &>> results.txt
 
