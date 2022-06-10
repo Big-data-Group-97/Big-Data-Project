@@ -264,8 +264,8 @@ def compute_rmin(points):
 # Method computeObjective: computes objective function
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def computeObjective(inputPoints, solution, z, N):
-    computed_distances = inputPoints.map(lambda x: compute_distance(x, solution, N)).groupByKey().flatMap(lambda x: collect_top_distances(x, z)).groupByKey().flatMap(lambda x: collect_top_distances(x, z)).collect()
-    return computed_distances[-1]
+    computed_distances = inputPoints.map(lambda x: compute_distance(x, solution, N)).groupByKey().mapValues(list).flatMap(lambda x: collect_top_distances(x, z)).groupByKey().mapValues(list).flatMap(lambda x: collect_top_distances(x, z)).collect()
+    return computed_distances[-1][1]
 
 
 def compute_distance(point, solution, N):
@@ -279,8 +279,9 @@ def compute_distance(point, solution, N):
 def collect_top_distances(points, z):
     count = 0
     distances = []
-    for point in points:
-        distance = point[1]
+    points = points[1]
+    print(points)
+    for distance in points:
         if len(distances) < z + 1 and count == 0:
             distances.append(distance)
             if len(distances) == z+1 and count == 0:
