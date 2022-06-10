@@ -3,11 +3,14 @@
 *.pdf
 *.txt
 *.zip
+*.sh
+*.docx
 WordCountExample.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.sh
 *$py.class
 
 # C extensions

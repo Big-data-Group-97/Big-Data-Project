@@ -24,7 +24,7 @@ def main():
     end = 0
 
     # Set Spark Configuration
-    conf = SparkConf().setAppName('MR k-center with outliers')  
+    conf = SparkConf().setAppName('MR k-center with outliers')
     sc = SparkContext(conf=conf)
     sc.setLogLevel("WARN")
 
@@ -102,7 +102,7 @@ def MR_kCenterOutliers(points, k, z, L):
     
     #------------- ROUND 1 ---------------------------
     time_start = time.time()
-    coreset = points.mapPartitions(lambda x: extractCoreset(x, k, z))
+    coreset = points.mapPartitions(lambda x: extractCoreset(x, k ,z ))
     # END OF ROUND 1
 
     
@@ -134,7 +134,7 @@ def MR_kCenterOutliers(points, k, z, L):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def extractCoreset(iter, k , z):
     partition = list(iter)
-    if len(partition) == 0:
+    if len(partition) == 0 :
         return []
     centers = kCenterFFT(partition, k+z+1)
     weights = computeWeights(partition, centers)
@@ -266,29 +266,29 @@ def compute_rmin(points):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def computeObjective(inputPoints, solution, z):
     distances = []
-    list_sorted = False
+    count = 0
     inputPoints = inputPoints.collect()
     for point in inputPoints:
         minimum = math.inf
         for cluster in solution: 
                 dist = euclidean(cluster, point)
-                minimum = min(minimum, dist)
-        if len(distances) < z+1:
+                minimum = min(minimum, dist) 
+        #if less distance of z+1    
+        if len(distances) < z + 1 and count == 0:
             distances.append(minimum)
+            if len(distances) == z+1 and count == 0:
+                distances = sorted(distances, reverse=False)
+                count = 1   
         else:
-            if not list_sorted:
-                distances = sorted(distances, reverse=True)
-                list_sorted = True
-            biggest_loser = next(filter(lambda x: x < minimum, distances), None)
-            if biggest_loser:
-                distances.insert(distances.index(biggest_loser), minimum)
-                distances.pop()
-    return distances.pop()
+            for i in range(0, len(distances)):
+                if (minimum > distances[i]):
+                    distances.insert(i, minimum)
+                    distances.pop()
+                    break
+    return distances[-1]
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
-
-
 
 
 # Just start the main program
