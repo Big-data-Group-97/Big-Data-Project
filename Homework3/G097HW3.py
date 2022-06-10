@@ -47,7 +47,7 @@ def main():
 
     # Compute the value of the objective function
     start = time.time()
-    objective = computeObjective(inputPoints, solution, z)
+    objective = computeObjective(inputPoints, solution, z, N)
     end = time.time()
     print("Objective function = ", objective)
     print("Time to compute objective function: ", str((end-start)*1000), " ms")
@@ -245,7 +245,6 @@ def compute_ball_weight(center, free_points, r, alpha):
     return ball_weight
 
 def compute_rmin(points):
-    #jesus christ
     rmin = math.inf
     for point1 in points:
         for point2 in points:
@@ -264,28 +263,38 @@ def compute_rmin(points):
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Method computeObjective: computes objective function
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-def computeObjective(inputPoints, solution, z):
-    distances = []
+def computeObjective(inputPoints, solution, z, N):
+    computed_distances = inputPoints.map(lambda x: compute_distance(x, solution, N)).groupByKey().flatMap(lambda x: collect_top_distances(x, z)).groupByKey().flatMap(lambda x: collect_top_distances(x, z)).collect()
+    return computed_distances[-1]
+
+
+def compute_distance(point, solution, N):
+    minimum = math.inf
+    for cluster in solution:
+        dist = euclidean(cluster, point)
+        minimum = min(minimum, dist)
+    
+    return (random.randint(0, int(math.sqrt(N))), minimum)
+
+def collect_top_distances(points, z):
     count = 0
-    inputPoints = inputPoints.collect()
-    for point in inputPoints:
-        minimum = math.inf
-        for cluster in solution: 
-                dist = euclidean(cluster, point)
-                minimum = min(minimum, dist) 
-        #if less distance of z+1    
+    distances = []
+    for point in points:
+        distance = point[1]
         if len(distances) < z + 1 and count == 0:
-            distances.append(minimum)
+            distances.append(distance)
             if len(distances) == z+1 and count == 0:
                 distances = sorted(distances, reverse=False)
-                count = 1   
+                count = 1
         else:
             for i in range(0, len(distances)):
-                if (minimum > distances[i]):
-                    distances.insert(i, minimum)
+                if (distance > distances[i]):
+                    distances.insert(i, distance)
                     distances.pop()
                     break
-    return distances[-1]
+    return [(0, dist) for dist in distances]
+
+
 #
 # ****** ADD THE CODE FOR SeqWeightedOuliers from HW2
 #
