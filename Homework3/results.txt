@@ -1,0 +1,1115 @@
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 2 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 2 &>> results.txt
+
+22/06/11 16:12:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:12:53 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:12:53 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:12:53 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:12:53 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:12:53 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:12:53 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:12:53 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:12:53 INFO util.Utils: Successfully started service 'sparkDriver' on port 45680.
+22/06/11 16:12:53 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:12:53 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:12:53 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:12:53 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:12:53 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-cf0d2650-c397-45b7-b886-c965aeb8b13b
+22/06/11 16:12:54 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:12:54 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:12:54 INFO util.log: Logging initialized @3258ms
+22/06/11 16:12:54 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:12:54 INFO server.Server: Started @3373ms
+22/06/11 16:12:54 INFO server.AbstractConnector: Started ServerConnector@306c80ae{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:12:54 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@473dccd5{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@23b47186{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2df1cfdd{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@24e3ce51{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@245ba30a{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7f70f7b{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@379fb165{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4b3d94e3{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1e30078{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2f7dd8ad{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2d7f6c3d{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ac27ffd{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@133b5e1d{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@52425467{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48ad496{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1dae7e6d{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@54ac0073{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@148d97ed{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@46f1df8e{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@28c29c2b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1cd9aed8{/static,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3ac70b6d{/,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4a726b92{/api,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@21629b1d{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6f107407{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:12:54 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:12:55 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:12:55 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:12:55 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:12:55 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:12:55 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:12:55 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:12:55 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:12:55 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:13:00 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-1fcfdd91-cae8-4cc7-8b04-77fe3dfc01a7/__spark_libs__7260205375398243616.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1839/__spark_libs__7260205375398243616.zip
+22/06/11 16:13:01 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1839/pyspark.zip
+22/06/11 16:13:01 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1839/py4j-0.10.7-src.zip
+22/06/11 16:13:01 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-1fcfdd91-cae8-4cc7-8b04-77fe3dfc01a7/__spark_conf__4966548659895699507.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1839/__spark_conf__.zip
+22/06/11 16:13:01 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:13:01 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:13:01 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:13:01 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:13:01 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:13:02 INFO yarn.Client: Submitting application application_1653310256066_1839 to ResourceManager
+22/06/11 16:13:03 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1839
+22/06/11 16:13:03 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1839 and attemptId None
+22/06/11 16:13:04 INFO yarn.Client: Application report for application_1653310256066_1839 (state: ACCEPTED)
+22/06/11 16:13:04 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654963983005
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1839/
+	 user: group097
+22/06/11 16:13:05 INFO yarn.Client: Application report for application_1653310256066_1839 (state: ACCEPTED)
+22/06/11 16:13:06 INFO yarn.Client: Application report for application_1653310256066_1839 (state: ACCEPTED)
+22/06/11 16:13:07 INFO yarn.Client: Application report for application_1653310256066_1839 (state: ACCEPTED)
+22/06/11 16:13:07 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-2, PROXY_URI_BASES -> http://minion-2:8088/proxy/application_1653310256066_1839), /proxy/application_1653310256066_1839
+22/06/11 16:13:07 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:13:08 INFO yarn.Client: Application report for application_1653310256066_1839 (state: RUNNING)
+22/06/11 16:13:08 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.8
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654963983005
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1839/
+	 user: group097
+22/06/11 16:13:08 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1839 has started running.
+22/06/11 16:13:08 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:13:08 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35740.
+22/06/11 16:13:08 INFO netty.NettyBlockTransferService: Server created on frontend:35740
+22/06/11 16:13:08 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:13:08 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 35740, None)
+22/06/11 16:13:08 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:35740 with 366.3 MB RAM, BlockManagerId(driver, frontend, 35740, None)
+22/06/11 16:13:08 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 35740, None)
+22/06/11 16:13:08 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 35740, None)
+22/06/11 16:13:08 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:13:08 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6e6177df{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:13:08 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1839
+22/06/11 16:13:13 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:48796) with ID 2
+22/06/11 16:13:13 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-5:38353 with 1048.8 MB RAM, BlockManagerId(2, minion-5, 38353, None)
+22/06/11 16:13:13 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:54582) with ID 1
+22/06/11 16:13:14 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  2
+Time to read from file:  11695.10269165039  ms
+Initial guess =  1.1248060951366234
+Final guess =  1.1248060951366234
+Number of guesses =  1
+Time Round 1:  372172.06168174744  ms
+Time Round 2:  490.06056785583496  ms
+1196793
+[2527.7806031361965, 2293.2866843042602, 2201.8986473807454, 2181.472192537684, 2165.165390197919, 2152.3512266518337, 2130.107609544797, 2130.0705560484735, 2052.6815385464847, 2002.605394820714, 1997.3564438253413, 1993.6725577894854, 1979.3889034451204, 1974.837223019322, 1962.837108326802, 1960.8110277245166, 1956.5084732791195, 1956.1842592063172, 1945.3044879074114, 1924.0393093487332, 1884.6183244831977, 1883.1151684454462, 1879.4969124212757, 1872.0360580763963, 1864.8184573149556, 1862.271345077828, 1861.6024853853542, 1841.5915199061137, 1832.9371711397564, 1828.157913729759, 1816.7704102550722, 1793.927290264262, 1788.6865573058165, 1787.7871420676577, 1778.4369243864446, 1770.8149807700095, 1767.9337629912193, 1763.648958843594, 1762.5207797539854, 1759.0824785476673, 1750.9715215019241, 1747.0235775516066, 1746.300820940855, 1742.2868723036038, 1727.6543222743626, 1710.981116252796, 1690.0774250772054, 1689.8618917067467, 1684.5024336766323, 1681.3136723859388, 1645.8386314669444, 1638.8235177806696, 1622.9950679438734, 1619.0700997805889, 1596.8188139491224, 1588.4466057784714, 1587.6514589319843, 1580.5370756469674, 1564.115141629084, 1560.346021356687, 1551.2020392936179, 1531.874314361236, 1513.8028592866224, 1492.2185288413723, 1485.547278075933, 1476.1274013890181, 1466.1153182845733, 1456.967606814806, 1452.850396839913, 1437.3385500292795, 1431.9381672567977, 1424.9395623186958, 1422.260841710407, 1417.4879006179237, 1404.906843578376, 1361.214607368681, 1358.27470233638, 1306.6415676183365, 1227.064855962424, 1189.0448046026859, 1186.073050787489, 1172.3348823762783, 1158.17980077746, 1144.5186048015055, 1130.1813614453397, 1074.8946082753732, 1037.8357077068003, 936.2612640368541, 903.5691943926721, 888.8647966506903, 875.2387549107879, 867.9768598979891, 682.241960978079, 415.3452966261136, 13.511036678610171, 12.692565379976717, 11.888151653178166, 11.633078628107627, 11.615263285477594, 11.41702765842772, 11.292159606508227, 10.609496141751288, 10.324759962906679, 10.12768293123406, 10.070819987884697, 9.95728499314198, 9.661306584953717, 9.544146256542769, 9.53756144134253, 9.503749230313975, 9.47447445926235, 9.274766789599543, 9.23253372837047, 9.173077628712532, 9.154456928396932, 9.107588937610329, 9.106325079686716, 9.085026403102242, 9.0450695628078, 9.03646189140381, 9.00776761923479, 9.003081712783668, 8.998676110901533, 8.997771841151105, 8.993742616600807, 8.986657087885916, 8.98177582239832, 8.978913254808969, 8.957763974074831, 8.956157024167249, 8.954347334071855, 8.952718762052154, 8.9521785347412, 8.938001672468557, 8.90996300017124, 8.901733898545798, 8.900907692790973, 8.900904582234656, 8.88378379530387, 8.87978330272297, 8.87523355109363, 8.870980578733645, 8.86027018237192, 8.854742523825276, 8.852562893291088, 8.851005157261918, 8.846434865604856, 8.823519735828222, 8.812483426188157, 8.806843986429774, 8.79461278161051]
+Objective function =  8.79461278161051
+Time to compute objective function:  16290.38405418396  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 4 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 4 &>> results.txt
+
+22/06/11 16:19:57 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:19:58 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:19:58 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:19:58 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:19:58 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:19:58 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:19:58 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:19:58 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:19:58 INFO util.Utils: Successfully started service 'sparkDriver' on port 41686.
+22/06/11 16:19:58 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:19:58 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:19:58 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:19:58 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:19:58 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-59606939-e82f-4c8c-acbf-dacaf458a366
+22/06/11 16:19:58 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:19:58 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:19:58 INFO util.log: Logging initialized @3016ms
+22/06/11 16:19:58 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:19:58 INFO server.Server: Started @3114ms
+22/06/11 16:19:58 INFO server.AbstractConnector: Started ServerConnector@69ce0ff0{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:19:58 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6b432574{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@aff86c0{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48beafa6{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7570ed51{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3cfacb9{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3eb1f0f9{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3a82f6cf{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7b9416d{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2aa0ebdb{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@362337f2{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7212c5cc{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3fed50ca{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@12be9adf{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3d0db3dd{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@59d53d15{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ceb5de5{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6ae556c5{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3aa6931f{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4a6b2ccb{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1c395416{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5c2a7a2a{/static,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4c49a27b{/,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7d654133{/api,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5cf95bd5{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2aeb226{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:19:58 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:19:59 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:20:00 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:20:00 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:20:00 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:20:00 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:20:00 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:20:00 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:20:00 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:20:04 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-32640be9-e89d-48e7-8639-13f92d8b850b/__spark_libs__9186021926329959439.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1840/__spark_libs__9186021926329959439.zip
+22/06/11 16:20:05 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1840/pyspark.zip
+22/06/11 16:20:05 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1840/py4j-0.10.7-src.zip
+22/06/11 16:20:05 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-32640be9-e89d-48e7-8639-13f92d8b850b/__spark_conf__225126111393187210.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1840/__spark_conf__.zip
+22/06/11 16:20:05 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:20:05 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:20:05 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:20:05 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:20:05 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:20:06 INFO yarn.Client: Submitting application application_1653310256066_1840 to ResourceManager
+22/06/11 16:20:06 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1840
+22/06/11 16:20:06 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1840 and attemptId None
+22/06/11 16:20:07 INFO yarn.Client: Application report for application_1653310256066_1840 (state: ACCEPTED)
+22/06/11 16:20:07 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964406652
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1840/
+	 user: group097
+22/06/11 16:20:08 INFO yarn.Client: Application report for application_1653310256066_1840 (state: ACCEPTED)
+22/06/11 16:20:09 INFO yarn.Client: Application report for application_1653310256066_1840 (state: ACCEPTED)
+22/06/11 16:20:10 INFO yarn.Client: Application report for application_1653310256066_1840 (state: ACCEPTED)
+22/06/11 16:20:11 INFO yarn.Client: Application report for application_1653310256066_1840 (state: RUNNING)
+22/06/11 16:20:11 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.7
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964406652
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1840/
+	 user: group097
+22/06/11 16:20:11 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1840 has started running.
+22/06/11 16:20:11 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45207.
+22/06/11 16:20:11 INFO netty.NettyBlockTransferService: Server created on frontend:45207
+22/06/11 16:20:11 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:20:11 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 45207, None)
+22/06/11 16:20:11 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:45207 with 366.3 MB RAM, BlockManagerId(driver, frontend, 45207, None)
+22/06/11 16:20:11 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 45207, None)
+22/06/11 16:20:11 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 45207, None)
+22/06/11 16:20:11 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-6, PROXY_URI_BASES -> http://minion-6:8088/proxy/application_1653310256066_1840), /proxy/application_1653310256066_1840
+22/06/11 16:20:11 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:20:12 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:20:12 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@47794581{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:20:12 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:20:12 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1840
+22/06/11 16:20:15 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:46490) with ID 4
+22/06/11 16:20:15 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:34046 with 1048.8 MB RAM, BlockManagerId(4, minion-6, 34046, None)
+22/06/11 16:20:16 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:39784) with ID 1
+22/06/11 16:20:17 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:56700) with ID 2
+22/06/11 16:20:17 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-3:44556 with 1048.8 MB RAM, BlockManagerId(1, minion-3, 44556, None)
+22/06/11 16:20:17 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-5:37637 with 1048.8 MB RAM, BlockManagerId(2, minion-5, 37637, None)
+22/06/11 16:20:17 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.17:32832) with ID 3
+22/06/11 16:20:17 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+22/06/11 16:20:17 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-8:44922 with 1048.8 MB RAM, BlockManagerId(3, minion-8, 44922, None)
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  4
+Time to read from file:  7476.611137390137  ms
+Initial guess =  1.021153261118938
+Final guess =  1.021153261118938
+Number of guesses =  1
+Time Round 1:  190188.94600868225  ms
+Time Round 2:  1231.5690517425537  ms
+1196793
+[2536.4919055506766, 2506.1476558848526, 2363.6968039146313, 2300.6329008368857, 2260.8967960062846, 2205.175055020546, 2201.8986473807454, 2199.4392052997446, 2152.3512266518337, 2148.2039066224393, 2126.696007312818, 2116.475064498384, 2108.979400880058, 2077.2191730767863, 2060.050999049513, 2039.7346478034128, 2037.5855071676813, 2015.5133882511145, 2013.9499706128447, 2011.2574136173264, 2002.4382221818971, 1993.6725577894854, 1993.4362924091322, 1991.614918784349, 1991.3988250633204, 1981.8521080440523, 1978.7535970154995, 1952.6202865821865, 1945.8920944851795, 1930.6420197164239, 1916.7731497211769, 1899.0513799571888, 1889.8795721644074, 1881.708009703401, 1872.0360580763963, 1860.7301100442753, 1841.2652686735123, 1828.157913729759, 1828.0591235470051, 1820.2947712426947, 1810.3322593183925, 1800.2807767911013, 1798.823056529766, 1794.13418117625, 1766.2106960795325, 1763.648958843594, 1763.1661188011728, 1762.9587084356708, 1742.1107204773843, 1733.1441927691665, 1712.9770275349078, 1710.981116252796, 1696.1298767103651, 1693.4689515050252, 1690.0774250772054, 1690.0221437156588, 1688.08920212574, 1658.4674058682217, 1653.913544439338, 1625.708285466203, 1587.6514589319843, 1577.5043990802153, 1560.0698793983158, 1551.3592088153368, 1551.1836070058594, 1540.9455393202795, 1535.8342982570841, 1508.5790540751407, 1466.1153182845733, 1456.967606814806, 1451.9378133587918, 1431.9381672567977, 1418.9286225746396, 1417.4879006179237, 1412.373255618827, 1409.026424453917, 1392.05982600299, 1365.8551800918492, 1358.27470233638, 1354.552470639279, 1307.850517784635, 1281.5914048387356, 1279.0781626902174, 1273.3174755790337, 1265.088549807619, 1184.1995255592726, 1176.7991547261258, 1155.9574595661975, 1130.1813614453397, 1122.2714245532168, 1074.8946082753732, 1027.238648401121, 888.8647966506903, 670.233790204447, 415.3452966261136, 10.40073230220702, 9.998473993428593, 9.414331247081629, 8.964391743016458, 8.872708294944998, 8.85253039517915, 8.780616368841772, 8.698132574812714, 8.578361656286225, 8.503615514189875, 8.485357952281088, 8.445780616081478, 8.436196196297601, 8.325544955846421, 8.282656635560405, 8.267543064923027, 8.230290200614338, 8.189152033086257, 8.117617587703377, 8.066270855669629, 8.01898648671669, 7.982823871302372, 7.964607687919845, 7.934865264943159, 7.90171070640851, 7.893418539879308, 7.88965998273024, 7.888786957322023, 7.8808425896271626, 7.863964505395992, 7.862769000684541, 7.85076692337398, 7.844937932434602, 7.839031935963196, 7.8369436909672405, 7.826040919407678, 7.822531851139775, 7.819883395890433, 7.81747238098305, 7.81401740786972, 7.8086778955269285, 7.806676029570598, 7.8017490321590754, 7.798591074777116, 7.793057488020248, 7.781650210944706, 7.780626977271896, 7.77991115163077, 7.775662755376869, 7.773179763003087, 7.770723082550489, 7.765851786906561, 7.765780225635588, 7.761991839977731, 7.7598958911404585, 7.755540884588578]
+Objective function =  7.755540884588578
+Time to compute objective function:  8487.242937088013  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 8 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 8 &>> results.txt
+
+22/06/11 16:23:47 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:23:48 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:23:48 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:23:48 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:23:48 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:23:48 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:23:48 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:23:48 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:23:48 INFO util.Utils: Successfully started service 'sparkDriver' on port 42412.
+22/06/11 16:23:48 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:23:48 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:23:48 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:23:48 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:23:48 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-aefa92ab-388f-481c-afbc-9e3c414ca78e
+22/06/11 16:23:48 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:23:48 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:23:48 INFO util.log: Logging initialized @2974ms
+22/06/11 16:23:48 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:23:48 INFO server.Server: Started @3079ms
+22/06/11 16:23:49 INFO server.AbstractConnector: Started ServerConnector@306c80ae{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:23:49 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@473dccd5{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@23b47186{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2df1cfdd{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@24e3ce51{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@245ba30a{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7f70f7b{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@379fb165{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4b3d94e3{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1e30078{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2f7dd8ad{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2d7f6c3d{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ac27ffd{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@133b5e1d{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@52425467{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48ad496{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1dae7e6d{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@54ac0073{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@148d97ed{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@46f1df8e{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@28c29c2b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1cd9aed8{/static,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3ac70b6d{/,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4a726b92{/api,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@21629b1d{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6f107407{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:23:49 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:23:49 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:23:50 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:23:50 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:23:50 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:23:50 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:23:50 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:23:50 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:23:50 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:23:55 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-2826ecc9-fffb-4bb9-81ae-6f0be3529b0d/__spark_libs__1201861153358149046.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1841/__spark_libs__1201861153358149046.zip
+22/06/11 16:23:56 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1841/pyspark.zip
+22/06/11 16:23:56 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1841/py4j-0.10.7-src.zip
+22/06/11 16:23:56 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-2826ecc9-fffb-4bb9-81ae-6f0be3529b0d/__spark_conf__6568800289776215563.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1841/__spark_conf__.zip
+22/06/11 16:23:56 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:23:56 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:23:56 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:23:56 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:23:56 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:23:58 INFO yarn.Client: Submitting application application_1653310256066_1841 to ResourceManager
+22/06/11 16:23:58 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1841
+22/06/11 16:23:58 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1841 and attemptId None
+22/06/11 16:23:59 INFO yarn.Client: Application report for application_1653310256066_1841 (state: ACCEPTED)
+22/06/11 16:23:59 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964638086
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1841/
+	 user: group097
+22/06/11 16:24:00 INFO yarn.Client: Application report for application_1653310256066_1841 (state: ACCEPTED)
+22/06/11 16:24:01 INFO yarn.Client: Application report for application_1653310256066_1841 (state: ACCEPTED)
+22/06/11 16:24:02 INFO yarn.Client: Application report for application_1653310256066_1841 (state: ACCEPTED)
+22/06/11 16:24:03 INFO yarn.Client: Application report for application_1653310256066_1841 (state: RUNNING)
+22/06/11 16:24:03 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.8
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964638086
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1841/
+	 user: group097
+22/06/11 16:24:03 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1841 has started running.
+22/06/11 16:24:03 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36653.
+22/06/11 16:24:03 INFO netty.NettyBlockTransferService: Server created on frontend:36653
+22/06/11 16:24:03 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:24:03 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 36653, None)
+22/06/11 16:24:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:36653 with 366.3 MB RAM, BlockManagerId(driver, frontend, 36653, None)
+22/06/11 16:24:03 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 36653, None)
+22/06/11 16:24:03 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 36653, None)
+22/06/11 16:24:03 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-2, PROXY_URI_BASES -> http://minion-2:8088/proxy/application_1653310256066_1841), /proxy/application_1653310256066_1841
+22/06/11 16:24:03 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:24:03 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:24:03 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:24:03 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6e6177df{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:24:03 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1841
+22/06/11 16:24:07 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:55912) with ID 6
+22/06/11 16:24:07 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:41435 with 1048.8 MB RAM, BlockManagerId(6, minion-2, 41435, None)
+22/06/11 16:24:08 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.17:36480) with ID 1
+22/06/11 16:24:08 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:39484) with ID 4
+22/06/11 16:24:08 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-8:43850 with 1048.8 MB RAM, BlockManagerId(1, minion-8, 43850, None)
+22/06/11 16:24:08 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:40611 with 1048.8 MB RAM, BlockManagerId(4, minion-6, 40611, None)
+22/06/11 16:24:08 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:45104) with ID 2
+22/06/11 16:24:08 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-5:36527 with 1048.8 MB RAM, BlockManagerId(2, minion-5, 36527, None)
+22/06/11 16:24:08 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:59188) with ID 3
+22/06/11 16:24:08 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-3:38288 with 1048.8 MB RAM, BlockManagerId(3, minion-3, 38288, None)
+22/06/11 16:24:09 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.19:33474) with ID 5
+22/06/11 16:24:09 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-9:38599 with 1048.8 MB RAM, BlockManagerId(5, minion-9, 38599, None)
+22/06/11 16:24:09 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.4:60296) with ID 8
+22/06/11 16:24:09 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-7:45053 with 1048.8 MB RAM, BlockManagerId(8, minion-7, 45053, None)
+22/06/11 16:24:10 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:34274) with ID 7
+22/06/11 16:24:10 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  8
+Time to read from file:  5685.48583984375  ms
+Initial guess =  0.8321553138358813
+Final guess =  0.8321553138358813
+Number of guesses =  1
+Time Round 1:  97025.06232261658  ms
+Time Round 2:  4226.4227867126465  ms
+1196793
+[2312.9947215306365, 2299.7972524639717, 2273.678646409499, 2213.6228414873794, 2191.03055682914, 2163.963788977979, 2111.341310695555, 2077.2191730767863, 2047.6580221534023, 2040.8263750765002, 2027.836522095543, 2018.2857200666942, 1997.2054806149295, 1954.8354336824525, 1951.9875550779143, 1948.488555543684, 1935.2045304495316, 1928.1384672106874, 1926.3805688212974, 1883.1151684454462, 1876.5749652092325, 1857.572896034581, 1849.3762559942172, 1832.3898222093308, 1816.7704102550722, 1816.145724809646, 1791.3251573337038, 1788.6865573058165, 1783.9318221489352, 1771.0022209260053, 1765.1126502942134, 1753.573613715482, 1741.6647186369316, 1734.0498190447165, 1732.9793458020908, 1729.9691027256397, 1725.3250017659504, 1718.019978993567, 1714.887883580037, 1711.6239336673839, 1690.7439265173184, 1688.375520448298, 1682.6952307598408, 1679.970029300291, 1666.8163426501817, 1663.3860031577985, 1643.2260875081922, 1626.1169976852016, 1624.413233480463, 1622.7483813674098, 1615.174283145853, 1599.6503373062492, 1598.9358518720253, 1596.8188139491224, 1588.4466057784714, 1579.1042750508552, 1552.7716952585156, 1552.696386141184, 1546.7770361357307, 1525.7623886969043, 1524.0083448104103, 1520.8315631359694, 1520.3706893175624, 1507.3384239148438, 1499.3409869560671, 1457.880651207749, 1455.2487682452233, 1444.417359658307, 1435.336956961977, 1418.0122451282775, 1393.0344348824713, 1386.5350107302122, 1380.8333364396453, 1377.9988826660644, 1349.5080698853862, 1349.1170388447101, 1302.7013141689047, 1283.5734541764837, 1282.575447818903, 1226.9860869967322, 1224.5676217421137, 1213.391215090487, 1196.964954191671, 1183.9605533923325, 1172.3348823762783, 1164.6043833564836, 1162.3020393290376, 1158.17980077746, 1155.207304125387, 1094.5720242226146, 1003.5942458580511, 938.0892246370859, 850.8120695370307, 800.918375504931, 670.233790204447, 415.3452966261136, 9.323104376179709, 8.424409869523396, 8.08538312221718, 7.695212534502146, 7.6741630509352, 7.632240723864747, 7.296611058310676, 7.149182944745622, 7.061601650312302, 6.901430519182768, 6.896212390202174, 6.874737792160853, 6.8223176544316235, 6.755144453003849, 6.711013507920032, 6.707491146022078, 6.682930165738048, 6.6395876949526915, 6.637007548387475, 6.630196390395698, 6.622847667307419, 6.615491807452524, 6.602758670039343, 6.599705054555484, 6.578359592624219, 6.573489106618962, 6.567351426089648, 6.555957064900977, 6.551909533223922, 6.524854139579764, 6.521855375172701, 6.502744546783484, 6.499690996582471, 6.490760624242368, 6.489007298457022, 6.479304372408941, 6.469325769130922, 6.466590739090438, 6.454708561123233, 6.453478191400474, 6.452202434138626, 6.446627900205269, 6.437368326256362, 6.437286614440828, 6.422315643139972, 6.414234173685754, 6.409972271303486, 6.409787137201682, 6.396555367727524, 6.391297768039481, 6.387198334690185, 6.38340088997394, 6.382697768493441, 6.3739029443394335, 6.37098774343421]
+Objective function =  6.37098774343421
+Time to compute objective function:  4505.932807922363  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 16 G097HW3.py /data/BDC2122/HIGGS-REDUCED-7D.txt 10 150 16 &>> results.txt
+
+22/06/11 16:26:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:26:04 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:26:04 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:26:04 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:26:04 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:26:04 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:26:04 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:26:04 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:26:05 INFO util.Utils: Successfully started service 'sparkDriver' on port 35096.
+22/06/11 16:26:05 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:26:05 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:26:05 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:26:05 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:26:05 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-2e9a9fbf-1525-4482-8c17-568af071468c
+22/06/11 16:26:05 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:26:05 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:26:05 INFO util.log: Logging initialized @3142ms
+22/06/11 16:26:05 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:26:05 INFO server.Server: Started @3252ms
+22/06/11 16:26:05 INFO server.AbstractConnector: Started ServerConnector@69ce0ff0{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:26:05 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6b432574{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@aff86c0{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48beafa6{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7570ed51{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3cfacb9{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3eb1f0f9{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3a82f6cf{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7b9416d{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2aa0ebdb{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@362337f2{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7212c5cc{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3fed50ca{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@12be9adf{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3d0db3dd{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@59d53d15{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ceb5de5{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6ae556c5{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3aa6931f{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4a6b2ccb{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1c395416{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5c2a7a2a{/static,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4c49a27b{/,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7d654133{/api,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5cf95bd5{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2aeb226{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:26:05 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:26:06 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:26:06 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:26:06 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:26:06 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:26:06 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:26:06 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:26:06 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:26:07 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:26:10 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-1d2ccf93-b8d9-463a-821e-99cd0f6f5b87/__spark_libs__5353905511664347665.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1842/__spark_libs__5353905511664347665.zip
+22/06/11 16:26:12 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1842/pyspark.zip
+22/06/11 16:26:12 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1842/py4j-0.10.7-src.zip
+22/06/11 16:26:12 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-1d2ccf93-b8d9-463a-821e-99cd0f6f5b87/__spark_conf__4618194255220053878.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1842/__spark_conf__.zip
+22/06/11 16:26:12 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:26:12 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:26:12 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:26:12 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:26:12 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:26:13 INFO yarn.Client: Submitting application application_1653310256066_1842 to ResourceManager
+22/06/11 16:26:13 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1842
+22/06/11 16:26:13 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1842 and attemptId None
+22/06/11 16:26:14 INFO yarn.Client: Application report for application_1653310256066_1842 (state: ACCEPTED)
+22/06/11 16:26:14 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964773669
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1842/
+	 user: group097
+22/06/11 16:26:15 INFO yarn.Client: Application report for application_1653310256066_1842 (state: ACCEPTED)
+22/06/11 16:26:16 INFO yarn.Client: Application report for application_1653310256066_1842 (state: ACCEPTED)
+22/06/11 16:26:17 INFO yarn.Client: Application report for application_1653310256066_1842 (state: ACCEPTED)
+22/06/11 16:26:18 INFO yarn.Client: Application report for application_1653310256066_1842 (state: ACCEPTED)
+22/06/11 16:26:19 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-7, PROXY_URI_BASES -> http://minion-7:8088/proxy/application_1653310256066_1842), /proxy/application_1653310256066_1842
+22/06/11 16:26:19 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:26:19 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:26:19 INFO yarn.Client: Application report for application_1653310256066_1842 (state: RUNNING)
+22/06/11 16:26:19 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.4
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964773669
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1842/
+	 user: group097
+22/06/11 16:26:19 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1842 has started running.
+22/06/11 16:26:19 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46805.
+22/06/11 16:26:19 INFO netty.NettyBlockTransferService: Server created on frontend:46805
+22/06/11 16:26:19 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:26:19 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 46805, None)
+22/06/11 16:26:19 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:46805 with 366.3 MB RAM, BlockManagerId(driver, frontend, 46805, None)
+22/06/11 16:26:19 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 46805, None)
+22/06/11 16:26:19 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 46805, None)
+22/06/11 16:26:20 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:26:20 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@47794581{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:26:20 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1842
+22/06/11 16:26:23 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.4:39062) with ID 4
+22/06/11 16:26:23 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:40818) with ID 10
+22/06/11 16:26:23 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-7:46352 with 1048.8 MB RAM, BlockManagerId(4, minion-7, 46352, None)
+22/06/11 16:26:24 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:36916 with 1048.8 MB RAM, BlockManagerId(10, minion-2, 36916, None)
+22/06/11 16:26:24 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:40822) with ID 1
+22/06/11 16:26:24 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:42776 with 1048.8 MB RAM, BlockManagerId(1, minion-2, 42776, None)
+22/06/11 16:26:24 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.6:54566) with ID 2
+22/06/11 16:26:24 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-4:35806 with 1048.8 MB RAM, BlockManagerId(2, minion-4, 35806, None)
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.6:54568) with ID 11
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-4:44562 with 1048.8 MB RAM, BlockManagerId(11, minion-4, 44562, None)
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.4:39066) with ID 13
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-7:39930 with 1048.8 MB RAM, BlockManagerId(13, minion-7, 39930, None)
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:52770) with ID 12
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:37434) with ID 8
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.19:34946) with ID 16
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:52244) with ID 9
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:41777 with 1048.8 MB RAM, BlockManagerId(12, minion-6, 41777, None)
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.17:60304) with ID 5
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.19:34948) with ID 7
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:52772) with ID 3
+22/06/11 16:26:25 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:58256) with ID 14
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-1:39203 with 1048.8 MB RAM, BlockManagerId(8, minion-1, 39203, None)
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-9:40134 with 1048.8 MB RAM, BlockManagerId(16, minion-9, 40134, None)
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-3:42684 with 1048.8 MB RAM, BlockManagerId(9, minion-3, 42684, None)
+22/06/11 16:26:25 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-8:35501 with 1048.8 MB RAM, BlockManagerId(5, minion-8, 35501, None)
+22/06/11 16:26:26 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:58258) with ID 6
+22/06/11 16:26:26 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.17:60306) with ID 15
+22/06/11 16:26:26 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-9:38581 with 1048.8 MB RAM, BlockManagerId(7, minion-9, 38581, None)
+22/06/11 16:26:26 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:44936 with 1048.8 MB RAM, BlockManagerId(3, minion-6, 44936, None)
+22/06/11 16:26:26 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+File : /data/BDC2122/HIGGS-REDUCED-7D.txt
+Number of points N =  1196793
+Number of centers k =  10
+Number of outliers z =  150
+Number of partitions L =  16
+Time to read from file:  5539.944887161255  ms
+Initial guess =  0.7406080155494901
+Final guess =  0.7406080155494901
+Number of guesses =  1
+Time Round 1:  49279.06513214111  ms
+Time Round 2:  15131.975412368774  ms
+1196793
+[2374.8774062500765, 2317.801080305373, 2210.0100134073873, 2139.2439316931227, 2132.8671205811465, 2107.729008679741, 2103.996190579122, 2095.840203915584, 2044.6907210586783, 2032.9767241800903, 2007.6737393073681, 2000.9955644414142, 1993.8597538955307, 1979.6751568718857, 1979.3889034451204, 1949.036293241973, 1906.422406240059, 1884.826322564074, 1881.3810977519781, 1874.5342307903286, 1868.2104331942114, 1830.5437483812207, 1820.2947712426947, 1805.6837440382658, 1798.8026298875893, 1758.8657681326656, 1754.4083874704825, 1751.1436632387124, 1738.9089246455605, 1731.7431547824135, 1710.6800976645306, 1707.3746854074425, 1649.4386098382963, 1644.4203405571136, 1633.714161807995, 1621.1885702751663, 1620.4436531042222, 1615.174283145853, 1611.3319367056222, 1593.3938056838488, 1582.2146489987242, 1575.7142679192518, 1572.6074180627425, 1552.7716952585156, 1551.3592088153368, 1544.4040006887913, 1541.3196977648065, 1503.2239539068153, 1494.7040021384073, 1476.6014574681433, 1460.3660252187346, 1453.498085387775, 1451.9378133587918, 1444.4835613306323, 1439.7102675056612, 1437.6485061248184, 1433.7582704941549, 1430.4040930794165, 1424.9395623186958, 1404.1558956747813, 1396.481708314672, 1376.5935233304303, 1361.759602604133, 1352.4028464241126, 1349.5080698853862, 1335.4357817939306, 1298.5654825887614, 1293.824830264992, 1273.3174755790337, 1270.9963012068022, 1267.9060944566334, 1267.492915923941, 1267.0654536145776, 1228.4082242781303, 1222.1754883444808, 1220.7340314612784, 1219.6225984117739, 1217.7030823702462, 1212.5281953749854, 1144.5186048015055, 1141.7397404576157, 1122.0187189088952, 1118.6305154878567, 1108.3368009106641, 1095.5769077564782, 1077.1695991073182, 1077.04685953114, 1071.7283941011272, 1070.2666455320032, 1045.4403211058877, 1039.508510257511, 923.5645232894683, 921.1338610956692, 898.1464085095354, 796.4364486097073, 755.9566547675985, 8.134453683387548, 8.016465865863045, 7.968960986964323, 7.968140729014668, 7.964306428713875, 7.87672202904851, 7.8756177259382385, 7.7823934987507535, 7.728624561094309, 7.489522979513378, 7.405005683968333, 7.299844348974386, 7.25748277692249, 7.210774656516193, 7.189671437742125, 7.185353446173053, 7.141079893375, 7.087481294750329, 7.028501924424275, 7.004217042456271, 7.0000030361947045, 6.998318461694675, 6.970398476413557, 6.953927723807453, 6.930504180956471, 6.841247032916473, 6.835983788053527, 6.828859037189835, 6.821671784150044, 6.80797395831293, 6.8007006379859565, 6.7952829315790675, 6.773011077384814, 6.750441052598443, 6.744927512083973, 6.74059917551274, 6.725141987072013, 6.668952990583072, 6.666143103648139, 6.571508018197265, 6.551107159945641, 6.52108348542746, 6.516202377421748, 6.515234502029857, 6.514548061907049, 6.508680967445352, 6.493921663359398, 6.49373362865431, 6.485677788049643, 6.462814754463829, 6.456231285983446, 6.454859065841992, 6.431380947246089, 6.383907918763199, 6.370862940357468]
+Objective function =  6.370862940357468
+Time to compute objective function:  2414.8778915405273  ms
+
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 2 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 2 &>> results.txt
+
+22/06/11 16:27:40 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:27:41 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:27:41 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:27:41 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:27:41 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:27:41 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:27:41 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:27:41 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:27:42 INFO util.Utils: Successfully started service 'sparkDriver' on port 35779.
+22/06/11 16:27:42 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:27:42 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:27:42 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:27:42 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:27:42 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-df0c50bf-a4f1-4589-b14f-ab3087ffa040
+22/06/11 16:27:42 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:27:42 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:27:42 INFO util.log: Logging initialized @3062ms
+22/06/11 16:27:42 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:27:42 INFO server.Server: Started @3173ms
+22/06/11 16:27:42 INFO server.AbstractConnector: Started ServerConnector@2ee221ef{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:27:42 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@230644ab{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@29b9c179{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@112d01c6{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3ffca32a{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@58290fa5{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@21f30657{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7beec4ba{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@8edd36d{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5ab1dde{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2abd1948{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@36e1c6b3{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@50711db9{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@d69bf84{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4fdc9038{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@77b0032e{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2ff444b4{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6f215b51{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@44574bdd{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3309890a{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3ed5ba3b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5bcb9563{/static,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@53a82ecc{/,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5f25867d{/api,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48f23d5{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4e9bddb9{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:27:42 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:27:43 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:27:43 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:27:43 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:27:43 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:27:43 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:27:43 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:27:43 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:27:44 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:27:48 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-24e78544-310c-45a5-8562-1e3ab1357834/__spark_libs__1412114549588816279.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1843/__spark_libs__1412114549588816279.zip
+22/06/11 16:27:49 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1843/pyspark.zip
+22/06/11 16:27:49 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1843/py4j-0.10.7-src.zip
+22/06/11 16:27:49 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-24e78544-310c-45a5-8562-1e3ab1357834/__spark_conf__8285022297660919720.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1843/__spark_conf__.zip
+22/06/11 16:27:49 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:27:49 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:27:49 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:27:49 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:27:49 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:27:51 INFO yarn.Client: Submitting application application_1653310256066_1843 to ResourceManager
+22/06/11 16:27:51 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1843
+22/06/11 16:27:51 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1843 and attemptId None
+22/06/11 16:27:52 INFO yarn.Client: Application report for application_1653310256066_1843 (state: ACCEPTED)
+22/06/11 16:27:52 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964871199
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1843/
+	 user: group097
+22/06/11 16:27:53 INFO yarn.Client: Application report for application_1653310256066_1843 (state: ACCEPTED)
+22/06/11 16:27:54 INFO yarn.Client: Application report for application_1653310256066_1843 (state: ACCEPTED)
+22/06/11 16:27:55 INFO yarn.Client: Application report for application_1653310256066_1843 (state: ACCEPTED)
+22/06/11 16:27:56 INFO yarn.Client: Application report for application_1653310256066_1843 (state: RUNNING)
+22/06/11 16:27:56 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.4
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964871199
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1843/
+	 user: group097
+22/06/11 16:27:56 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1843 has started running.
+22/06/11 16:27:56 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46400.
+22/06/11 16:27:56 INFO netty.NettyBlockTransferService: Server created on frontend:46400
+22/06/11 16:27:56 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:27:56 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 46400, None)
+22/06/11 16:27:56 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:46400 with 366.3 MB RAM, BlockManagerId(driver, frontend, 46400, None)
+22/06/11 16:27:56 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 46400, None)
+22/06/11 16:27:56 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 46400, None)
+22/06/11 16:27:56 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-7, PROXY_URI_BASES -> http://minion-7:8088/proxy/application_1653310256066_1843), /proxy/application_1653310256066_1843
+22/06/11 16:27:56 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:27:56 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:27:56 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6965ec32{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:27:56 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:27:56 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1843
+22/06/11 16:28:01 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:60528) with ID 1
+22/06/11 16:28:01 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:34182 with 1048.8 MB RAM, BlockManagerId(1, minion-2, 34182, None)
+22/06/11 16:28:02 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:40874) with ID 2
+22/06/11 16:28:02 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  2
+Time to read from file:  3869.821786880493  ms
+Initial guess =  1.9547059241737614
+Final guess =  1.9547059241737614
+Number of guesses =  1
+Time Round 1:  2393.932819366455  ms
+Time Round 2:  859.4670295715332  ms
+9200
+[22.549116102410757, 22.34630850946079, 22.219299943967634, 21.312281154301623, 21.19812144978889, 21.072241646298576, 20.50444342087831, 20.385073779606483, 20.198892048822874, 20.08864818747145, 20.021335070369318, 20.00835687906431, 19.92224575694216, 19.9123510666119, 19.87630639731638, 19.78769481268599, 19.538018835081512, 19.533650990022323, 19.434713890356093, 19.22168912973051, 19.00900470829549, 18.989865744654438, 18.82415270337553, 18.791145388187495, 18.73902476117688, 18.7204925148886, 18.712954657135253, 18.6532743774384, 18.53629375036984, 18.210079434203465, 18.18639406259525, 18.147942748421922, 18.13216018570319, 18.059372552777127, 17.99419400806827, 17.99033309863939, 17.93928008588973, 17.866264214994693, 17.84560923588769, 17.805725371351762, 17.747863110808574, 17.742357143288487, 17.741625996508887, 17.71368693976497, 17.544626755790503, 17.477556179283187, 17.337228988509093, 17.33455107581388, 17.33143929395363, 17.23391217918903, 17.230165785621452, 17.210551792432458, 17.202543910712745, 17.202268019072367, 17.109571648641587, 17.012493350476287, 16.99010594434302, 16.95665724722889, 16.895452701836668, 16.691440021759657, 16.563921425797698, 16.37228249206567, 16.349035445554584, 16.346531436362877, 16.25453798174528, 16.2146877860784, 16.152586480189477, 16.09273677781377, 16.016068962139247, 15.994567984162625, 15.95298072461695, 15.887705750044594, 15.827030327891583, 15.799733320534243, 15.770443874539488, 15.758769812393354, 15.757053341281804, 15.679995727040236, 15.67473285258795, 15.622454096588028, 15.616797527021982, 15.599538614971918, 15.582773052316458, 15.531356057987981, 15.515463415573507, 15.433169603163186, 15.191007899412071, 15.14195786548094, 15.064153477709926, 15.029366719858825, 14.894942262392288, 14.828767480812425, 14.70690538488638, 14.702954328977562, 14.691055816380251, 14.67944770759445, 14.67754727466412, 14.578547835775685, 14.546448157540045, 14.417879594448, 14.23430574351978, 14.150364588942574, 14.10278061234734, 14.06440791501726, 14.008787028147726, 14.006436556098057, 13.99190869752944, 13.976707945721698, 13.942831742511995, 13.916165024891017, 13.893926514848134, 13.805514043308929, 13.788572805044032, 13.781098976496757, 13.771966780383982, 13.76999669571493, 13.757929677098948, 13.736292986100727, 13.730845021337908, 13.718578643576745, 13.715793269074892, 13.673849860225904, 13.640495775447459, 13.606967406442923, 13.604246432640073, 13.597979739652507, 13.582619776758827, 13.567184121990827, 13.551737785243633, 13.530968627559526, 13.495643222907159, 13.465894771607271, 13.461584007835038, 13.432736504525057, 13.431058037250825, 13.424745658670783, 13.417461533389988, 13.415509233719009, 13.407885739369949, 13.36551925665442, 13.361700640262827, 13.361417776568473, 13.355242603562093, 13.317173348725321, 13.309822125032328, 13.30433466957292, 13.300009360898962, 13.296156512315875, 13.28544858106041, 13.28344849803695, 13.27598553780472, 13.248264980743707, 13.242862417166466, 13.23493199831416, 13.218977456671906, 13.218471469878809, 13.199010947794536, 13.197152723220261, 13.195773944714269, 13.184203426828638, 13.172821261977253, 13.163483125677642, 13.157482509963677, 13.1465941597054, 13.144731720350933, 13.132861074419392, 13.123111254576791, 13.106033915719888, 13.074565996621077, 13.07336360696818, 13.058690018527892, 13.039677641721058, 13.03890305969026, 13.027629293159979, 13.025292395950279, 13.019847502947185, 13.012947898151289, 13.007375023424208, 13.006960674961697, 12.997258172399281, 12.988612012066572, 12.987854634234248, 12.98399449322126, 12.971410563234826, 12.966180085129164, 12.964848822874874, 12.963501456011029, 12.958580169138903, 12.957073010522091, 12.944329492098072, 12.933807018817005, 12.928977724476134, 12.922037494141549, 12.911298346796888, 12.906142917231316, 12.903351890109795, 12.902297857358588, 12.898846149946904, 12.897527863897016, 12.896928626614944, 12.892091257821596]
+Objective function =  12.892091257821596
+Time to compute objective function:  272.2821235656738  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 4 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 4 &>> results.txt
+
+22/06/11 16:28:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:28:13 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:28:13 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:28:13 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:28:13 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:28:13 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:28:13 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:28:13 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:28:13 INFO util.Utils: Successfully started service 'sparkDriver' on port 40399.
+22/06/11 16:28:13 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:28:13 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:28:13 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:28:13 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:28:13 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-611eb28a-df3b-47b8-8892-77762b86e6ed
+22/06/11 16:28:13 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:28:14 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:28:14 INFO util.log: Logging initialized @2982ms
+22/06/11 16:28:14 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:28:14 INFO server.Server: Started @3088ms
+22/06/11 16:28:14 INFO server.AbstractConnector: Started ServerConnector@306c80ae{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:28:14 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@473dccd5{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@23b47186{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2df1cfdd{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@24e3ce51{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@245ba30a{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7f70f7b{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@379fb165{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4b3d94e3{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1e30078{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2f7dd8ad{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2d7f6c3d{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ac27ffd{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@133b5e1d{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@52425467{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48ad496{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1dae7e6d{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@54ac0073{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@148d97ed{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@46f1df8e{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@28c29c2b{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1cd9aed8{/static,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3ac70b6d{/,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4a726b92{/api,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@21629b1d{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6f107407{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:28:14 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:28:15 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:28:15 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:28:15 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:28:15 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:28:15 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:28:15 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:28:15 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:28:15 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:28:19 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-4a85a91d-7c8b-4933-9817-e9b8f58fd99c/__spark_libs__973251301454146075.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1844/__spark_libs__973251301454146075.zip
+22/06/11 16:28:20 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1844/pyspark.zip
+22/06/11 16:28:20 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1844/py4j-0.10.7-src.zip
+22/06/11 16:28:20 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-4a85a91d-7c8b-4933-9817-e9b8f58fd99c/__spark_conf__1137277697292856767.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1844/__spark_conf__.zip
+22/06/11 16:28:20 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:28:20 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:28:20 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:28:20 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:28:20 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:28:21 INFO yarn.Client: Submitting application application_1653310256066_1844 to ResourceManager
+22/06/11 16:28:21 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1844
+22/06/11 16:28:21 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1844 and attemptId None
+22/06/11 16:28:22 INFO yarn.Client: Application report for application_1653310256066_1844 (state: ACCEPTED)
+22/06/11 16:28:22 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964901653
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1844/
+	 user: group097
+22/06/11 16:28:23 INFO yarn.Client: Application report for application_1653310256066_1844 (state: ACCEPTED)
+22/06/11 16:28:24 INFO yarn.Client: Application report for application_1653310256066_1844 (state: ACCEPTED)
+22/06/11 16:28:25 INFO yarn.Client: Application report for application_1653310256066_1844 (state: ACCEPTED)
+22/06/11 16:28:26 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-2, PROXY_URI_BASES -> http://minion-2:8088/proxy/application_1653310256066_1844), /proxy/application_1653310256066_1844
+22/06/11 16:28:26 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:28:26 INFO yarn.Client: Application report for application_1653310256066_1844 (state: RUNNING)
+22/06/11 16:28:26 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.8
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964901653
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1844/
+	 user: group097
+22/06/11 16:28:26 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:28:26 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1844 has started running.
+22/06/11 16:28:26 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40812.
+22/06/11 16:28:26 INFO netty.NettyBlockTransferService: Server created on frontend:40812
+22/06/11 16:28:26 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:28:26 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 40812, None)
+22/06/11 16:28:26 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:40812 with 366.3 MB RAM, BlockManagerId(driver, frontend, 40812, None)
+22/06/11 16:28:26 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 40812, None)
+22/06/11 16:28:26 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 40812, None)
+22/06/11 16:28:26 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:28:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6e6177df{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:27 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1844
+22/06/11 16:28:30 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:39860) with ID 1
+22/06/11 16:28:30 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:36632 with 1048.8 MB RAM, BlockManagerId(1, minion-2, 36632, None)
+22/06/11 16:28:31 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:37898) with ID 4
+22/06/11 16:28:31 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.4:52272) with ID 3
+22/06/11 16:28:31 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:57846) with ID 2
+22/06/11 16:28:31 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+22/06/11 16:28:31 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:37895 with 1048.8 MB RAM, BlockManagerId(4, minion-6, 37895, None)
+22/06/11 16:28:31 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-7:42099 with 1048.8 MB RAM, BlockManagerId(3, minion-7, 42099, None)
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  4
+Time to read from file:  3830.198049545288  ms
+Initial guess =  1.7466622455414775
+Final guess =  1.7466622455414775
+Number of guesses =  1
+Time Round 1:  1209.8073959350586  ms
+Time Round 2:  3378.739833831787  ms
+9200
+[23.195067600677522, 22.542814065683988, 22.46338275950441, 22.190469057683302, 21.984424145289772, 21.93181451681552, 21.760807269033013, 21.421694260725502, 21.313224838114017, 21.0559338192349, 21.046833514806924, 21.032176896365243, 20.953786602903065, 20.923862454145503, 20.68093385222244, 20.62317182200643, 20.434077077274623, 20.32301601632986, 20.2523529497192, 20.06099232341212, 20.027916916144825, 19.974232525932003, 19.866062745295054, 19.83218056593878, 19.812699891736116, 19.61040647207497, 19.474147503806165, 19.449239702363688, 19.382068749233145, 18.98921804603866, 18.712129248164146, 18.614996159011156, 18.58140193849754, 18.515419762997546, 18.41433824496552, 18.345755803454924, 18.278316142358406, 18.232767124054433, 18.149879613925815, 18.122368195133884, 18.103247498722435, 18.07967878586343, 18.00233454305302, 17.842971053050555, 17.67241027703918, 17.640029053264055, 17.492771364194983, 17.477239713410125, 17.46380854796571, 17.28274983907364, 16.978831526344795, 16.90210415895016, 16.680014058747073, 16.633982595878837, 16.55971364486717, 16.4860948984288, 16.342477933287842, 16.28560652846556, 16.255274651632313, 16.25223778437911, 16.180341467348576, 16.002778165056217, 15.915641017565077, 15.79169629900474, 15.71809384117552, 15.681693562877705, 15.672620489248123, 15.667591550713851, 15.567683996022017, 15.55973483064541, 15.40283623233072, 15.374168465318702, 15.270206318187062, 15.265209628432888, 15.25824803180234, 15.239580866939876, 15.208023967629718, 15.199875788966171, 15.18159164909925, 15.142838076133549, 15.057090854477835, 15.048727022575697, 15.005637607246152, 14.96895620943558, 14.857339364771878, 14.807921562461084, 14.736862522260289, 14.675329263767814, 14.673241632304702, 14.536521867351906, 14.527239138941717, 14.499897172049186, 14.448908367070501, 14.29218086927254, 14.266446964819233, 14.209946164570786, 14.006943421032295, 13.860657451939284, 13.85039901952287, 13.814293648247093, 13.811545894649157, 13.807110523205063, 13.795223303738146, 13.794758606079343, 13.73553089618308, 13.724710306596638, 13.723556718285533, 13.703619448890136, 13.68243593078367, 13.669945135222745, 13.662515434574996, 13.621249648985954, 13.595401759418513, 13.593761694247839, 13.579835971027043, 13.566447176766658, 13.52247677017786, 13.510714599901814, 13.507201412579883, 13.481552024896834, 13.467719814430353, 13.46460623263822, 13.456624725390832, 13.372270600014046, 13.359826421028082, 13.314707995296029, 13.300137292524466, 13.296846242624602, 13.287182884268585, 13.263673133789148, 13.25098094482065, 13.2429213166884, 13.216812512856496, 13.206949572100289, 13.195428602360746, 13.169987775241099, 13.159113116012035, 13.134015227644593, 13.12658329497817, 13.111291317028998, 13.087993314484846, 13.068703455201668, 13.060593631225187, 13.001404731797255, 12.994248304538434, 12.984302907742101, 12.970854443713415, 12.969865265298633, 12.957205640106203, 12.929330415763996, 12.929266413838025, 12.899381109185045, 12.895706649889336, 12.893647583209336, 12.893375236919152, 12.886709626588162, 12.856702065459865, 12.852958725523084, 12.845909582431288, 12.816432576969305, 12.812241997402328, 12.7829305716647, 12.772059583324847, 12.76014647251355, 12.753052732581324, 12.748851909093622, 12.746759431322143, 12.735123713572634, 12.713292295861054, 12.701171166471225, 12.69825598261431, 12.679063451217523, 12.660289135718822, 12.658075248630812, 12.637664736809567, 12.61950315979199, 12.617091780596668, 12.61096491153631, 12.608577437601749, 12.604342267647286, 12.599991269838245, 12.598540312274277, 12.587361359713162, 12.586209318138641, 12.577982350122774, 12.573408925188108, 12.572985723367381, 12.568735218787927, 12.557240620454799, 12.55487483012077, 12.545537732596399, 12.545249180466683, 12.539894497163841, 12.534439756127913, 12.517501507888865, 12.507359833314142, 12.498834545668648, 12.49332561810505, 12.484802962001439, 12.46086084506203, 12.457315641822683]
+Objective function =  12.457315641822683
+Time to compute objective function:  254.09626960754395  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 8 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 8 &>> results.txt
+
+22/06/11 16:28:42 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:28:43 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:28:43 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:28:43 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:28:43 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:28:43 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:28:43 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:28:43 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:28:43 INFO util.Utils: Successfully started service 'sparkDriver' on port 46681.
+22/06/11 16:28:43 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:28:43 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:28:43 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:28:43 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:28:43 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-4d7b13d2-7579-4e0c-a90c-33f047549f75
+22/06/11 16:28:43 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:28:44 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:28:44 INFO util.log: Logging initialized @2967ms
+22/06/11 16:28:44 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:28:44 INFO server.Server: Started @3068ms
+22/06/11 16:28:44 INFO server.AbstractConnector: Started ServerConnector@4fd7234b{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:28:44 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@35ead3fa{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2dd924d3{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@159fe151{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@8b28d08{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6c29df71{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6d63ecc{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6f4b5279{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@66eaa7af{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5307f991{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4ad1cc44{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@750be3cf{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@466ff51e{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2a484733{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6ebf0dd2{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@44009e51{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7dfe54ca{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1567f599{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3a0ab7a{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@43125f49{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4cc51be5{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@66a4e4d9{/static,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@acd2c43{/,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5cc5c03c{/api,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5a361349{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6aaf36d5{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:28:44 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:28:45 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:28:45 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:28:45 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:28:45 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:28:45 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:28:45 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:28:45 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:28:45 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:28:49 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-7f3f5e8f-9bdc-4ca1-87e6-86428c2f5cbe/__spark_libs__5212662700950435748.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1845/__spark_libs__5212662700950435748.zip
+22/06/11 16:28:51 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1845/pyspark.zip
+22/06/11 16:28:51 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1845/py4j-0.10.7-src.zip
+22/06/11 16:28:51 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-7f3f5e8f-9bdc-4ca1-87e6-86428c2f5cbe/__spark_conf__8967724460373114601.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1845/__spark_conf__.zip
+22/06/11 16:28:51 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:28:51 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:28:51 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:28:51 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:28:51 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:28:52 INFO yarn.Client: Submitting application application_1653310256066_1845 to ResourceManager
+22/06/11 16:28:52 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1845
+22/06/11 16:28:52 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1845 and attemptId None
+22/06/11 16:28:53 INFO yarn.Client: Application report for application_1653310256066_1845 (state: ACCEPTED)
+22/06/11 16:28:53 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964932887
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1845/
+	 user: group097
+22/06/11 16:28:54 INFO yarn.Client: Application report for application_1653310256066_1845 (state: ACCEPTED)
+22/06/11 16:28:55 INFO yarn.Client: Application report for application_1653310256066_1845 (state: ACCEPTED)
+22/06/11 16:28:56 INFO yarn.Client: Application report for application_1653310256066_1845 (state: ACCEPTED)
+22/06/11 16:28:57 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-7, PROXY_URI_BASES -> http://minion-7:8088/proxy/application_1653310256066_1845), /proxy/application_1653310256066_1845
+22/06/11 16:28:57 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:28:57 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:28:57 INFO yarn.Client: Application report for application_1653310256066_1845 (state: RUNNING)
+22/06/11 16:28:57 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.4
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964932887
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1845/
+	 user: group097
+22/06/11 16:28:57 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1845 has started running.
+22/06/11 16:28:57 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43013.
+22/06/11 16:28:57 INFO netty.NettyBlockTransferService: Server created on frontend:43013
+22/06/11 16:28:57 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:28:57 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 43013, None)
+22/06/11 16:28:57 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:43013 with 366.3 MB RAM, BlockManagerId(driver, frontend, 43013, None)
+22/06/11 16:28:57 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 43013, None)
+22/06/11 16:28:57 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 43013, None)
+22/06/11 16:28:58 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:28:58 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@f0d6995{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:28:58 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1845
+22/06/11 16:29:00 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.4:58454) with ID 1
+22/06/11 16:29:01 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-7:39463 with 1048.8 MB RAM, BlockManagerId(1, minion-7, 39463, None)
+22/06/11 16:29:02 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.6:43002) with ID 8
+22/06/11 16:29:03 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:42602) with ID 4
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-4:36669 with 1048.8 MB RAM, BlockManagerId(8, minion-4, 36669, None)
+22/06/11 16:29:03 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.19:38318) with ID 5
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:41315 with 1048.8 MB RAM, BlockManagerId(4, minion-2, 41315, None)
+22/06/11 16:29:03 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:54592) with ID 7
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-9:35955 with 1048.8 MB RAM, BlockManagerId(5, minion-9, 35955, None)
+22/06/11 16:29:03 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:40326) with ID 2
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-3:35101 with 1048.8 MB RAM, BlockManagerId(7, minion-3, 35101, None)
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-1:39296 with 1048.8 MB RAM, BlockManagerId(2, minion-1, 39296, None)
+22/06/11 16:29:03 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:46058) with ID 3
+22/06/11 16:29:03 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:59026) with ID 6
+22/06/11 16:29:03 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:39209 with 1048.8 MB RAM, BlockManagerId(3, minion-6, 39209, None)
+22/06/11 16:29:03 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-5:43144 with 1048.8 MB RAM, BlockManagerId(6, minion-5, 43144, None)
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  8
+Time to read from file:  3936.7103576660156  ms
+Initial guess =  1.5532180304129846
+Final guess =  1.5532180304129846
+Number of guesses =  1
+Time Round 1:  746.7563152313232  ms
+Time Round 2:  13579.98538017273  ms
+9200
+[22.50361226558971, 22.197124183100836, 22.15754101880441, 21.66489884582894, 21.609889310220908, 21.322147382475336, 21.26295541546377, 21.15413191317479, 21.07759296029791, 21.053313872167493, 20.50254942683958, 20.464359872715292, 20.349767394248023, 20.259850369635018, 20.161346482812107, 20.054056996029505, 20.04311325617854, 19.953680863439704, 19.94885906511949, 19.530233920770126, 19.497319328564117, 19.418160983986102, 19.217477930259214, 19.083642943631073, 19.033003178689384, 19.00462601578889, 18.841543063135777, 18.78554329797251, 18.6503792186647, 18.60169078336698, 18.5238813427424, 18.494265192215664, 18.412972736633268, 18.390893969570918, 18.085239561587233, 18.040793801825906, 18.031379758631896, 17.983831182481666, 17.70339902391628, 17.67940230890174, 17.552324091128217, 17.497021717995324, 17.37742213333152, 17.30853422448013, 17.279587639755768, 17.253628516923623, 17.239229246111904, 17.222844393421198, 17.20550685100558, 17.191241083761227, 17.176642046686542, 17.05034762108973, 17.031547228599052, 16.985725418715564, 16.960165860038042, 16.957887397904262, 16.869414483022226, 16.845225347260868, 16.786391422816283, 16.77921917134406, 16.677504909308226, 16.55282549898959, 16.452320565804694, 16.402428387284605, 16.317595809432227, 16.309469182042683, 16.250335196542867, 16.146852975115618, 16.081990237529688, 16.076173487493843, 16.022877675374044, 15.910678803872571, 15.582263378598116, 15.566056661852416, 15.483159625864483, 15.382066051086897, 15.348029482640436, 15.334877175901998, 15.303819784615866, 15.20636971798331, 15.073110495183126, 15.053105526767554, 15.04926101175735, 14.863663747542189, 14.742709554216962, 14.611321671909083, 14.598616270044225, 14.580317863476088, 14.548867069294431, 14.462284224838065, 14.398520549000859, 14.378037870307613, 14.36593978826307, 14.2925314762641, 14.227833461212569, 14.129244848894091, 13.848156122747891, 13.828830463925723, 13.816541535420507, 13.68343714130335, 13.622474408124242, 13.529939135118088, 13.414897166955848, 13.391025203471166, 13.351345250573067, 13.317690978544292, 13.066192903826275, 12.995872036920034, 12.959902777413111, 12.89306115707205, 12.634034747458946, 12.603990637889256, 12.531545874312554, 12.424098679582354, 12.421993600062752, 12.414067061201173, 12.353466558015205, 12.277849730307016, 12.252761525468458, 12.211519970912715, 12.203167211834803, 12.191375517143253, 12.183588346624324, 12.182936304520352, 12.165953312420696, 12.14470670703908, 12.13790731551366, 12.117934518720586, 12.108581584975177, 12.108470175872755, 12.08069290231318, 12.06481466911117, 12.06227196675651, 12.055927712125685, 12.049298776277398, 12.042820682879903, 12.019098011082194, 12.01595247993267, 12.01229478492765, 12.006806403036572, 12.001059369905642, 11.996064104530287, 11.994927594612651, 11.993144750231277, 11.988774916562582, 11.981953471784141, 11.9753290560218, 11.962415307955165, 11.958656948002146, 11.954549259591515, 11.935208837720436, 11.933558480185196, 11.926392665009821, 11.913061109555345, 11.888254371437384, 11.880196042153514, 11.877113622425275, 11.86772501366627, 11.864737207372103, 11.858170052752662, 11.854924715070947, 11.836987496825362, 11.829986475055671, 11.828547882136675, 11.824934080154526, 11.824005835587194, 11.82164155267787, 11.81607887583694, 11.809144422861467, 11.806196042756534, 11.799715250801606, 11.788278288197985, 11.778937006368613, 11.77107301820866, 11.77046175814696, 11.769283750509205, 11.743091586119899, 11.739267523998254, 11.736399873896598, 11.73071374640094, 11.721498624322747, 11.710063791457328, 11.705294613977044, 11.704862066679812, 11.703424883340775, 11.702153690667373, 11.694414478715899, 11.690845863324007, 11.690034260001124, 11.6855696480745, 11.673289168010873, 11.66970458066527, 11.662295700247016, 11.660660573055022, 11.655019390803258, 11.653927149248874, 11.65037943588105, 11.643568181618557, 11.640534437902755, 11.637599838454667, 11.637094697560899]
+Objective function =  11.637094697560899
+Time to compute objective function:  268.74756813049316  ms
+
+spark-submit  --conf spark.pyspark.python=python3 --num-executors 16 G097HW3.py /data/BDC2122/artificial9000.txt 9 200 16 &>> results.txt
+
+22/06/11 16:29:24 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/11 16:29:25 INFO spark.SparkContext: Running Spark version 2.4.4
+22/06/11 16:29:25 INFO spark.SparkContext: Submitted application: MR k-center with outliers
+22/06/11 16:29:25 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:29:25 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:29:25 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:29:25 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:29:25 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:29:25 INFO util.Utils: Successfully started service 'sparkDriver' on port 36498.
+22/06/11 16:29:25 INFO spark.SparkEnv: Registering MapOutputTracker
+22/06/11 16:29:25 INFO spark.SparkEnv: Registering BlockManagerMaster
+22/06/11 16:29:25 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/06/11 16:29:25 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/06/11 16:29:25 INFO storage.DiskBlockManager: Created local directory at /var/spark/local/blockmgr-76e17e31-492d-450b-8a1e-cfbca30e0b0a
+22/06/11 16:29:25 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+22/06/11 16:29:25 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+22/06/11 16:29:26 INFO util.log: Logging initialized @3135ms
+22/06/11 16:29:26 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+22/06/11 16:29:26 INFO server.Server: Started @3235ms
+22/06/11 16:29:26 INFO server.AbstractConnector: Started ServerConnector@69ce0ff0{HTTP/1.1,[http/1.1]}{10.67.13.9:4040}
+22/06/11 16:29:26 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6b432574{/jobs,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@aff86c0{/jobs/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@48beafa6{/jobs/job,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7570ed51{/jobs/job/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3cfacb9{/stages,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3eb1f0f9{/stages/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3a82f6cf{/stages/stage,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7b9416d{/stages/stage/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2aa0ebdb{/stages/pool,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@362337f2{/stages/pool/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7212c5cc{/storage,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3fed50ca{/storage/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@12be9adf{/storage/rdd,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3d0db3dd{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@59d53d15{/environment,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@ceb5de5{/environment/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6ae556c5{/executors,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3aa6931f{/executors/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4a6b2ccb{/executors/threadDump,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1c395416{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5c2a7a2a{/static,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4c49a27b{/,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7d654133{/api,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5cf95bd5{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2aeb226{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/06/11 16:29:26 INFO ui.SparkUI: Bound SparkUI to 10.67.13.9, and started at http://frontend:4040
+22/06/11 16:29:27 INFO client.RMProxy: Connecting to ResourceManager at frontend/10.67.13.9:8032
+22/06/11 16:29:27 INFO yarn.Client: Requesting a new application from cluster with 9 NodeManagers
+22/06/11 16:29:27 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14336 MB per container)
+22/06/11 16:29:27 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+22/06/11 16:29:27 INFO yarn.Client: Setting up container launch context for our AM
+22/06/11 16:29:27 INFO yarn.Client: Setting up the launch environment for our AM container
+22/06/11 16:29:27 INFO yarn.Client: Preparing resources for our AM container
+22/06/11 16:29:27 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+22/06/11 16:29:31 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-a9e5e9ed-efda-4cfa-af2e-b30661827577/__spark_libs__4872782261636373857.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1846/__spark_libs__4872782261636373857.zip
+22/06/11 16:29:32 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/pyspark.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1846/pyspark.zip
+22/06/11 16:29:32 INFO yarn.Client: Uploading resource file:/opt/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1846/py4j-0.10.7-src.zip
+22/06/11 16:29:32 INFO yarn.Client: Uploading resource file:/var/spark/local/spark-a9e5e9ed-efda-4cfa-af2e-b30661827577/__spark_conf__5617028401963092386.zip -> hdfs://frontend:9000/user/group097/.sparkStaging/application_1653310256066_1846/__spark_conf__.zip
+22/06/11 16:29:32 INFO spark.SecurityManager: Changing view acls to: group097
+22/06/11 16:29:32 INFO spark.SecurityManager: Changing modify acls to: group097
+22/06/11 16:29:32 INFO spark.SecurityManager: Changing view acls groups to: 
+22/06/11 16:29:32 INFO spark.SecurityManager: Changing modify acls groups to: 
+22/06/11 16:29:32 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(group097); groups with view permissions: Set(); users  with modify permissions: Set(group097); groups with modify permissions: Set()
+22/06/11 16:29:34 INFO yarn.Client: Submitting application application_1653310256066_1846 to ResourceManager
+22/06/11 16:29:34 INFO impl.YarnClientImpl: Submitted application application_1653310256066_1846
+22/06/11 16:29:34 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1653310256066_1846 and attemptId None
+22/06/11 16:29:35 INFO yarn.Client: Application report for application_1653310256066_1846 (state: ACCEPTED)
+22/06/11 16:29:35 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964974039
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1846/
+	 user: group097
+22/06/11 16:29:36 INFO yarn.Client: Application report for application_1653310256066_1846 (state: ACCEPTED)
+22/06/11 16:29:37 INFO yarn.Client: Application report for application_1653310256066_1846 (state: ACCEPTED)
+22/06/11 16:29:38 INFO yarn.Client: Application report for application_1653310256066_1846 (state: ACCEPTED)
+22/06/11 16:29:39 INFO yarn.Client: Application report for application_1653310256066_1846 (state: ACCEPTED)
+22/06/11 16:29:39 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> minion-8, PROXY_URI_BASES -> http://minion-8:8088/proxy/application_1653310256066_1846), /proxy/application_1653310256066_1846
+22/06/11 16:29:39 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+22/06/11 16:29:39 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+22/06/11 16:29:40 INFO yarn.Client: Application report for application_1653310256066_1846 (state: RUNNING)
+22/06/11 16:29:40 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.67.13.17
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1654964974039
+	 final status: UNDEFINED
+	 tracking URL: http://frontend:8088/proxy/application_1653310256066_1846/
+	 user: group097
+22/06/11 16:29:40 INFO cluster.YarnClientSchedulerBackend: Application application_1653310256066_1846 has started running.
+22/06/11 16:29:40 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34397.
+22/06/11 16:29:40 INFO netty.NettyBlockTransferService: Server created on frontend:34397
+22/06/11 16:29:40 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/06/11 16:29:40 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, frontend, 34397, None)
+22/06/11 16:29:40 INFO storage.BlockManagerMasterEndpoint: Registering block manager frontend:34397 with 366.3 MB RAM, BlockManagerId(driver, frontend, 34397, None)
+22/06/11 16:29:40 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, frontend, 34397, None)
+22/06/11 16:29:40 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, frontend, 34397, None)
+22/06/11 16:29:40 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+22/06/11 16:29:40 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@47794581{/metrics/json,null,AVAILABLE,@Spark}
+22/06/11 16:29:40 INFO scheduler.EventLoggingListener: Logging events to hdfs://frontend:9000/shared/spark-logs/application_1653310256066_1846
+22/06/11 16:29:43 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.17:34444) with ID 9
+22/06/11 16:29:43 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-8:34179 with 1048.8 MB RAM, BlockManagerId(9, minion-8, 34179, None)
+22/06/11 16:29:44 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:56588) with ID 15
+22/06/11 16:29:44 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-1:37468 with 1048.8 MB RAM, BlockManagerId(15, minion-1, 37468, None)
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.4:53958) with ID 8
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.6:38874) with ID 14
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:44100) with ID 13
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.18:56590) with ID 6
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.6:38876) with ID 5
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.7:44102) with ID 4
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-7:37263 with 1048.8 MB RAM, BlockManagerId(8, minion-7, 37263, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:40674 with 1048.8 MB RAM, BlockManagerId(13, minion-6, 40674, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-4:45200 with 1048.8 MB RAM, BlockManagerId(5, minion-4, 45200, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-4:35782 with 1048.8 MB RAM, BlockManagerId(14, minion-4, 35782, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-1:40187 with 1048.8 MB RAM, BlockManagerId(6, minion-1, 40187, None)
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.19:37812) with ID 11
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-6:36025 with 1048.8 MB RAM, BlockManagerId(4, minion-6, 36025, None)
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:36448) with ID 7
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:33314) with ID 1
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.8:33312) with ID 10
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-9:44794 with 1048.8 MB RAM, BlockManagerId(11, minion-9, 44794, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:35417 with 1048.8 MB RAM, BlockManagerId(1, minion-2, 35417, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-3:40116 with 1048.8 MB RAM, BlockManagerId(7, minion-3, 40116, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-2:38120 with 1048.8 MB RAM, BlockManagerId(10, minion-2, 38120, None)
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.12:36450) with ID 16
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.19:37814) with ID 2
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:41982) with ID 12
+22/06/11 16:29:45 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.67.13.11:41984) with ID 3
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-3:44625 with 1048.8 MB RAM, BlockManagerId(16, minion-3, 44625, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-5:41904 with 1048.8 MB RAM, BlockManagerId(12, minion-5, 41904, None)
+22/06/11 16:29:45 INFO storage.BlockManagerMasterEndpoint: Registering block manager minion-9:44606 with 1048.8 MB RAM, BlockManagerId(2, minion-9, 44606, None)
+22/06/11 16:29:45 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 1.0
+File : /data/BDC2122/artificial9000.txt
+Number of points N =  9200
+Number of centers k =  9
+Number of outliers z =  200
+Number of partitions L =  16
+Time to read from file:  4547.841787338257  ms
+Initial guess =  1.232771876707122
+Final guess =  1.232771876707122
+Number of guesses =  1
+Time Round 1:  500.63467025756836  ms
+Time Round 2:  54092.84067153931  ms
+9200
+[23.063539754339534, 22.715599089612404, 22.67108665238611, 22.040433230769306, 21.897658733298407, 21.83992573247446, 21.461794938914128, 21.418006676626092, 21.369885469978538, 21.33940779403214, 20.99461133243481, 20.64985058057321, 20.631545943045566, 20.37423758082741, 20.277705244923546, 20.221396910203804, 20.146255359247288, 20.068684959408774, 19.826755685184605, 19.814500775946893, 19.59118814671535, 19.572964261960934, 19.522382667082415, 19.444875211736377, 19.43358610756131, 19.211251208601695, 19.08487739022706, 19.060654868078377, 18.95927965403749, 18.758043101560464, 18.739583613303687, 18.707741552630026, 18.669766843750352, 18.54375420458328, 18.442916933066744, 18.263343751898226, 18.204022769706704, 18.06667789052542, 17.896039031025833, 17.895877625866802, 17.766757554489228, 17.76357334547303, 17.75469653359358, 17.610009256102053, 17.511972618754292, 17.31886422373015, 17.304115261983203, 17.288886893030444, 17.27737563983605, 17.203051270050903, 17.098262835738602, 17.05927926379072, 16.8218199074892, 16.697911755665732, 16.666963310693408, 16.651211637595626, 16.583212867234142, 16.553310998105484, 16.54250700468342, 16.4915622364893, 16.485007612979743, 16.478192194533964, 16.42580972128924, 16.315523436286067, 16.314819796736952, 16.29317403086335, 16.28435202886501, 16.129826192491972, 16.07591521500409, 16.06589210096968, 15.84724897261351, 15.777267222177604, 15.716820543608685, 15.683955751021484, 15.679330151508386, 15.636916831651948, 15.602199652613095, 15.547535528179377, 15.495434424371584, 15.42248909871555, 15.343974191844818, 15.255404452193329, 15.225917377944754, 15.147925039423718, 15.08681480631349, 14.986864415213741, 14.929674745284975, 14.922877369998051, 14.76828199216144, 14.714073705130065, 14.700795658739018, 14.56363035098049, 14.556655453777836, 14.535134330304624, 14.235643048348747, 14.172853629386005, 14.112143458737936, 13.99436529464627, 13.962676856534351, 13.947666507340935, 13.796360860748749, 13.745739449007466, 13.69479612845697, 13.520007766269957, 13.388229046442252, 13.07127893513102, 13.060506728301162, 12.947586686328851, 12.734008167109051, 12.663111189593181, 12.604765963713882, 12.447489586257946, 12.43003656470889, 12.393252438323039, 12.389830709093646, 12.384782032801384, 12.374174437108925, 12.355025293377592, 12.312844066258618, 12.29997601623678, 12.29037936761921, 12.270879715814997, 12.270763016210521, 12.26678874033461, 12.255371271405854, 12.239411954828547, 12.235275272751325, 12.229194781341903, 12.18038496928566, 12.16475963593198, 12.158912985953965, 12.134311558551644, 12.132506624766375, 12.121025740423125, 12.119427915541227, 12.118571945571805, 12.115752556073438, 12.106547030429446, 12.102963604010384, 12.098436427902573, 12.086543136894027, 12.0784576829991, 12.063134667241348, 12.062733728305536, 12.062406559223577, 12.05697889191152, 12.026590081980844, 12.022938284795442, 12.010811213236181, 12.002661371545894, 11.992511830304775, 11.992433781347303, 11.989077112104999, 11.979559799925871, 11.978604008815049, 11.96583858323352, 11.955325173327575, 11.947027621965224, 11.933400605024538, 11.911556279512764, 11.888205289277266, 11.87567614917147, 11.845223509921626, 11.841443028617753, 11.833116622428767, 11.832721453663986, 11.831816132783674, 11.827334864626096, 11.811798846915737, 11.807966886809938, 11.788419953496739, 11.782921581679139, 11.776242397301441, 11.768626130521774, 11.767764825998182, 11.765164384741933, 11.76120036390844, 11.75425795190832, 11.750462331329777, 11.74660495632674, 11.737458540927847, 11.735517926363539, 11.734815209452597, 11.734511493879921, 11.703651139708496, 11.703147610792577, 11.702135745238987, 11.700834371958264, 11.679121970422262, 11.668887050614554, 11.662814840337646, 11.652722986495473, 11.651389788347137, 11.637609419464122, 11.636960642710791, 11.630573029735036, 11.629094977684204, 11.625904954024008, 11.616226624855422, 11.612348642716512, 11.611462311009753]
+Objective function =  11.611462311009753
+Time to compute objective function:  336.5366458892822  ms
+
