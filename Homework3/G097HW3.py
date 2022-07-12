@@ -26,7 +26,7 @@ def main():
     # Set Spark Configuration
     conf = SparkConf().setAppName('MR k-center with outliers')
     sc = SparkContext(conf=conf)
-    sc.setLogLevel("WARN")
+    sc.setLogLevel("ERROR")
 
     # Read points from file
     start = time.time()
@@ -264,8 +264,8 @@ def compute_rmin(points):
 # Method computeObjective: computes objective function
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def computeObjective(inputPoints, solution, z, N):
-    computed_distances = inputPoints.map(lambda x: compute_distance(x, solution, N)).groupByKey().mapValues(list).flatMap(lambda x: collect_top_distances(x, z)).groupByKey().mapValues(list).flatMap(lambda x: collect_top_distances(x, z)).collect()
-    return computed_distances[-1][1]
+    computed_distances = inputPoints.map(lambda x: compute_distance(x, solution, N)).top(z+1)
+    return computed_distances[-1]
 
 
 def compute_distance(point, solution, N):
@@ -273,27 +273,8 @@ def compute_distance(point, solution, N):
     for cluster in solution:
         dist = euclidean(cluster, point)
         minimum = min(minimum, dist)
-    
-    return (random.randint(0, int(math.sqrt(N))), minimum)
+    return (minimum)
 
-def collect_top_distances(points, z):
-    count = 0
-    distances = []
-    points = points[1]
-    print(points)
-    for distance in points:
-        if len(distances) < z + 1 and count == 0:
-            distances.append(distance)
-            if len(distances) == z+1 and count == 0:
-                distances = sorted(distances, reverse=False)
-                count = 1
-        else:
-            for i in range(0, len(distances)):
-                if (distance > distances[i]):
-                    distances.insert(i, distance)
-                    distances.pop()
-                    break
-    return [(0, dist) for dist in distances]
 
 
 #
